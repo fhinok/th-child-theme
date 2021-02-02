@@ -65,7 +65,7 @@ add_filter('body_class', function($classes) {
 /**
  * Author: 	Samuel Will
  * Mail:	saemiwill@gmail.com
- * Link:	https://willsam.ch
+ * Link:	https://git.willsam.ch/fhinok/th-child-theme
  */
 
 
