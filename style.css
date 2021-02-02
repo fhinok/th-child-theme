@@ -1,0 +1,69 @@
+/*
+Theme Name: Betheme Child
+Theme URI: https://themes.muffingroup.com/betheme
+Author: Muffin group
+Author URI: https://muffingroup.com
+Description: Child Theme for Betheme
+Template: betheme
+Version: 1.6.2
+*/
+.product-subcategories .woocommerce.columns-6 ul.products li.product {
+    width: 14.5%!important;
+}
+
+.widget:after, .orderby {
+    width: auto;
+}
+
+.column_sidebar_widget .widget_product_categories {
+    margin-bottom: 30px;
+}
+
+select.orderby {
+    border-width: 2px;
+    border-color: rgb(85, 85, 85);
+}
+
+.search_single .query_box_direct_value,.instance_search_input{
+    width: 100%;
+    border: 1px solid #a9a1a1;
+    
+    padding: 6px 10px 6px 10px;
+    box-shadow: inset 0 0 2px 2px rgba(0,0,0,0.02);
+    color: #626262;
+    background-color: rgba(255,255,255,1);
+    border-color: #EBEBEB;
+    font-size: 14px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0px;
+}
+
+table.add_cart_only_icon tr .wpt_action a.button:before {
+    /*content: "";*/
+    /* content: "\e01d";     */
+    z-index: 99999;
+    margin: 11px;
+    font-family: WooCommerce;
+    font-size: initial;
+    padding: 0 9px;
+}
+
+table.customer_info {
+    width: 100%;
+    margin: 0;
+}
+
+table.customer_info td {
+    padding: 5px;
+    width: 50%;
+    text-align: left;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    margin-bottom: 0;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    border: 2px solid black;
+}
