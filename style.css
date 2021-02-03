@@ -7,6 +7,7 @@ Description: Child Theme for Betheme
 Template: betheme
 Version: 1.6.2
 */
+
 .product-subcategories .woocommerce.columns-6 ul.products li.product {
     width: 14.5%!important;
 }
@@ -23,6 +24,8 @@ select.orderby {
     border-width: 2px;
     border-color: rgb(85, 85, 85);
 }
+
+/* product table mini cart badges */
 
 .search_single .query_box_direct_value,.instance_search_input{
     width: 100%;
@@ -49,16 +52,6 @@ table.add_cart_only_icon tr .wpt_action a.button:before {
     padding: 0 9px;
 }
 
-table.customer_info {
-    width: 100%;
-    margin: 0;
-}
-
-table.customer_info td {
-    padding: 5px;
-    width: 50%;
-    text-align: left;
-}
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
     margin-bottom: 0;
@@ -67,6 +60,10 @@ table.customer_info td {
 .select2-container--default.select2-container--focus .select2-selection--multiple {
     border: 2px solid black;
 }
+
+
+
+/* ajax search */
 
 input[type="search"].aws-search-field {
     background-color: rgb(12, 172, 231) !important;
