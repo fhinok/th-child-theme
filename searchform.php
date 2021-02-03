@@ -20,6 +20,8 @@ $translate['search-placeholder'] = mfn_opts_get('translate') ? mfn_opts_get('tra
 	<a href="#" class="icon_close"><i class="icon-cancel-fine"></i></a>
 
 	<input type="text" class="field" name="s" placeholder="<?php echo esc_html($translate['search-placeholder']); ?>" />
+	<!-- fallback to show products in product layout -->
+	<input type="hidden" class="display-none" name="post_type" value="product">
 	<input type="submit" class="display-none" value="" />
 
 </form>
