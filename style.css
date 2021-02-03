@@ -87,3 +87,21 @@ input[type="search"].aws-search-field::placeholder {
     transform: translateX(-15px);
     background-color: rgb(247, 245, 240);
 }
+
+@media screen and (max-width: 767px) {
+    body .select2-container, body .ui-widget.ui-datepicker {
+        z-index: 9000009!important
+    }
+
+    .select2-container, body .ui-widget.ui-datepicker {
+        z-index: -1!important;
+    }
+
+    #Side_slide, #Side_slide .search-wrapper input.field, #Side_slide a:not(.action_button), #Side_slide #menu ul li.submenu .menu-toggle {
+        z-index: 99999999999;
+    }
+
+    #body_overlay {
+        z-index: 999999998;
+    }
+}
