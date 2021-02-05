@@ -105,3 +105,8 @@ input[type="search"].aws-search-field::placeholder {
         z-index: 999999998;
     }
 }
+
+/* Product Table */
+div.wpt_product_table_wrapper table.wpt_product_table tbody tr.wpt_row>td, .custom_table thead .wpt_table_header_row th {
+    text-align: left;
+}
