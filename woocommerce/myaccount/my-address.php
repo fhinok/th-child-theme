@@ -47,7 +47,11 @@ $col    = 1;
 
 <p>
 	<?php echo apply_filters( 'woocommerce_my_account_my_address_description', esc_html__( 'The following addresses will be used on the checkout page by default.', 'woocommerce' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-	<?php echo '<p>Für eine Änderung der Adresse nehmen Sie bitte mit dem Töpferhaus Kontakt auf.</p>'; ?>
+	<?php 
+	if( count(array_intersect( $b2b_roles, $roles ) ) ) {
+		echo '<p>Für eine Änderung der Adresse nehmen Sie bitte mit dem Töpferhaus Kontakt auf.</p>'; 
+	}
+	?>
 </p>
 
 <?php if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) : ?>
