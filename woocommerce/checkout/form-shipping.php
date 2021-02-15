@@ -32,28 +32,26 @@ defined( 'ABSPATH' ) || exit;
 			<?php do_action( 'woocommerce_before_checkout_shipping_form', $checkout ); ?>
 
 			<div class="woocommerce-shipping-fields__field-wrapper">
-				<?php
-				$fields = $checkout->get_checkout_fields( 'shipping' );
-				// Verhindere, dass Stammkunden ihre Adresse ändern können.
-				if( is_user_logged_in() ) {
-					$user = wp_get_current_user();
-					$roles = ( array ) $user->roles;
-					$b2b_roles = th_return_option( 'b2b_roles' );
-		
-					if( count(array_intersect( $b2b_roles, $roles ) ) ){
-						echo wc_get_account_formatted_address( 'shipping' );
-					} else {
-						foreach ( $fields as $key => $field ) {
-							woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
-						}
-					}
-				} else {
-					foreach ( $fields as $key => $field ) {
-						woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
-					}
+			<?php
+			$fields = $checkout->get_checkout_fields( 'shipping' );
+			// Verhindere, dass Stammkunden ihre Adresse ändern können.
+			if( is_user_logged_in() ) {
+				$user = wp_get_current_user();
+				$roles = ( array ) $user->roles;
+				$b2b_roles = th_return_option( 'b2b_roles' );
+
+				if( count(array_intersect( $b2b_roles, $roles ) ) ){
+					echo "Für eine Änderung der Adresse nehmen Sie bitte mit dem Töpferhaus Kontakt auf.<br>";
 				}
-				
-				?>
+			}
+
+			foreach ( $fields as $key => $field ) {
+				if( count(array_intersect( $b2b_roles, $roles ) ) ){
+					$field['custom_attributes'] = array( 'readonly' => true );
+				}
+				woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
+			}
+			?>
 			</div>
 
 			<?php do_action( 'woocommerce_after_checkout_shipping_form', $checkout ); ?>

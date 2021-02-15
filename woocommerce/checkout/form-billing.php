@@ -41,18 +41,16 @@ defined( 'ABSPATH' ) || exit;
 			$b2b_roles = th_return_option( 'b2b_roles' );
 
 			if( count(array_intersect( $b2b_roles, $roles ) ) ){
-				echo wc_get_account_formatted_address( 'billing' );
-			} else {
-				foreach ( $fields as $key => $field ) {
-					woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
-				}
-			}
-		} else {
-			foreach ( $fields as $key => $field ) {
-				woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
+				echo "Für eine Änderung der Adresse nehmen Sie bitte mit dem Töpferhaus Kontakt auf.<br>";
 			}
 		}
 
+		foreach ( $fields as $key => $field ) {
+			if( count(array_intersect( $b2b_roles, $roles ) ) ){
+				$field['custom_attributes'] = array( 'readonly' => true );
+			}
+			woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
+		}
 		?>
 	</div>
 
