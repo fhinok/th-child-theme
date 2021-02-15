@@ -110,3 +110,23 @@ input[type="search"].aws-search-field::placeholder {
 div.wpt_product_table_wrapper table.wpt_product_table tbody tr.wpt_row>td, .custom_table thead .wpt_table_header_row th {
     text-align: left;
 }
+
+/* Produkteübersicht */
+.woocommerce ul.products li.product .desc {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 130px;
+}
+
+.woocommerce ul.products li.product .desc h4 {
+    order: 1;
+}
+
+.woocommerce ul.product li.product span.price {
+    order: 2;
+}
+
+.woocommerce ul.products li.product .price, .woocommerce-page ul.products li.product .price {
+    padding-bottom: 10px;
+}
