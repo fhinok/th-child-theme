@@ -117,7 +117,7 @@ if ($back_to_top_class == 'hide') {
 						</div>
 
                         <div class="links">
-                                <a href="/impressum">&nbsp;Impressum</a>. <a href="datenschutz">Datenschutzerklärung</a>
+                                <a href="/impressum">&nbsp;Impressum</a>. <a href="/datenschutz">Datenschutzerklärung</a>
                         </div>
 
 						<?php
