@@ -28,18 +28,20 @@ select.orderby {
 /* product table mini cart badges */
 
 .search_single .query_box_direct_value,.instance_search_input{
-    width: 100%;
-    border: 1px solid #a9a1a1;
-    
-    padding: 6px 10px 6px 10px;
-    box-shadow: inset 0 0 2px 2px rgba(0,0,0,0.02);
-    color: #626262;
-    background-color: rgba(255,255,255,1);
-    border-color: #EBEBEB;
-    font-size: 14px;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 0px;
+    padding: 7px 10px 7px 10px;
+}
+
+.search_single .query_box_direct_value:focus, .instance_search_input:focus {
+    outline: none;
+    border: 1px solid black;
+}
+
+.wpt_product_table_wrapper div.tables_cart_message_box div.widget_shopping_cart_content li a.remove::before {
+    display: none;
+}
+
+.button-custom a.remove {
+    padding: 0 !important;
 }
 
 table.add_cart_only_icon tr .wpt_action a.button:before {
@@ -53,13 +55,13 @@ table.add_cart_only_icon tr .wpt_action a.button:before {
 }
 
 
-.select2-container--default .select2-selection--multiple .select2-selection__choice {
+/* .select2-container--default .select2-selection--multiple .select2-selection__choice {
     margin-bottom: 0;
 }
 
 .select2-container--default.select2-container--focus .select2-selection--multiple {
     border: 2px solid black;
-}
+} */
 
 
 
