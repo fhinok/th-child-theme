@@ -44,6 +44,15 @@ select.orderby {
     padding: 0 !important;
 }
 
+.woocommerce .woocommerce-customer-details address {
+    width: auto;
+    padding: 15px 15px 15px 80px;
+}
+
+.woocommerce-MyAccount-content address {
+    padding: auto;
+}
+
 table.add_cart_only_icon tr .wpt_action a.button:before {
     /*content: "";*/
     /* content: "\e01d";     */
