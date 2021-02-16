@@ -119,8 +119,9 @@ function th_custom_wc_sorting_args( $args ){
 // Remove the category count for WooCommerce categories
 add_filter( 'woocommerce_subcategory_count_html', '__return_null' );
 
-
+####### B2B #######
 if( isb2b() ){
+
 	add_filter( 'woocommerce_after_order_notes', 'th_custom_checkout_fields' );
 	function th_custom_checkout_fields( $fields ) {
 		$custom_shipping_note = get_the_author_meta('customer_shipping_desc', wp_get_current_user()->ID );
@@ -153,8 +154,20 @@ if( isb2b() ){
 		$fields['order']['order_comments']['placeholder'] = "Anmerkungen zu Ihrer Bestellung.";
 		return $fields;
 	}
+
+	add_action('woocommerce_account_dashboard', 'th_show_crm_contact');
+
+	function th_show_crm_contact( ) {
+		$crm_contact = get_the_author_meta('crm_contact', wp_get_current_user()->ID );
+		$customer_number = get_the_author_meta('customer_number', wp_get_current_user()->ID);
+
+		echo "<h3>Ihre Kontaktperson im Töpferhaus</h3>";
+		echo "<p>Kundennummer: <strong>".$customer_number."</strong></p>";
+		echo "<address style='white-space: pre-line;'>". $crm_contact ."</address>";
+	}
 }
 
+##### END B2B #####
 
 function isb2b( ) {
 	$user = wp_get_current_user();
