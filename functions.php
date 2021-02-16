@@ -114,49 +114,54 @@ function th_custom_wc_sorting_args( $args ){
 // Remove the category count for WooCommerce categories
 add_filter( 'woocommerce_subcategory_count_html', '__return_null' );
 
-if( is_user_logged_in() ) {
+
+if( isb2b() ){
+	add_filter( 'woocommerce_after_order_notes', 'th_custom_checkout_fields' );
+	function th_custom_checkout_fields( $fields ) {
+		$custom_shipping_note = get_the_author_meta('customer_shipping_desc', wp_get_current_user()->ID );
+
+		woocommerce_form_field( 'shipping_notes', array(
+			'type' => 'text',
+			'class' => array('form-row-wide'),
+			'label' => 'Anmerkungen zum Versand',
+		),  $custom_shipping_note );
+
+		woocommerce_form_field( 'boxes', array(
+			'type'	=> 'checkbox',
+			'class'	=> array('form-row-wide'),
+			'label'	=> 'Gebinde zurücknehmen?',
+		), $fields->get_value( 'boxes' ) );
+
+	}
+
+	add_action( 'woocommerce_checkout_update_order_meta', 'th_save_custom_checkout_fields' );
+	function th_save_custom_checkout_fields( $order_id ) {
+		if( !empty( $_POST['boxes'] ) && $_POST['boxes'] == 1 )
+			update_post_meta( $order_id, 'boxes', 1 );
+
+		if( !empty( $_POST['shipping_notes'] ) )
+			update_post_meta( $order_id, 'shipping_notes', $_POST['shipping_notes'] );
+	}
+
+	add_filter( 'woocommerce_checkout_fields', 'th_change_shipping_notes', 50 );
+	function th_change_shipping_notes( $fields ) {
+		$fields['order']['order_comments']['placeholder'] = "Anmerkungen zu Ihrer Bestellung.";
+		return $fields;
+	}
+}
+
+
+function isb2b( ) {
 	$user = wp_get_current_user();
 	$roles = ( array ) $user->roles;
 	$b2b_roles = th_return_option( 'b2b_roles' );
 
 	if( count(array_intersect( $b2b_roles, $roles ) ) ){
-		add_filter( 'woocommerce_after_order_notes', 'th_custom_checkout_fields' );
-		function th_custom_checkout_fields( $fields ) {
-			$custom_shipping_note = get_the_author_meta('customer_shipping_desc', wp_get_current_user()->ID );
-
-			woocommerce_form_field( 'shipping_notes', array(
-				'type' => 'text',
-				'class' => array('form-row-wide'),
-				'label' => 'Anmerkungen zum Versand',
-			),  $custom_shipping_note );
-
-			woocommerce_form_field( 'boxes', array(
-				'type'	=> 'checkbox',
-				'class'	=> array('form-row-wide'),
-				'label'	=> 'Gebinde zurücknehmen?',
-			), $fields->get_value( 'boxes' ) );
-
-		}
-
-		add_action( 'woocommerce_checkout_update_order_meta', 'th_save_custom_checkout_fields' );
-		function th_save_custom_checkout_fields( $order_id ) {
-			if( !empty( $_POST['boxes'] ) && $_POST['boxes'] == 1 )
-				update_post_meta( $order_id, 'boxes', 1 );
-
-			if( !empty( $_POST['shipping_notes'] ) )
-				update_post_meta( $order_id, 'shipping_notes', $_POST['shipping_notes'] );
-		}
-
-		add_filter( 'woocommerce_checkout_fields', 'th_change_shipping_notes', 50 );
-		function th_change_shipping_notes( $fields ) {
-			$fields['order']['order_comments']['placeholder'] = "Anmerkungen zu Ihrer Bestellung.";
-			return $fields;
-		}
+		return true;
 	}
+
+	return false;
 }
-
-
-
 
 // füge abgeänderte Funktionen ein
 include_once('includes/wc-template-functions.php');

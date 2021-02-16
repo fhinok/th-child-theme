@@ -18,9 +18,6 @@
 defined( 'ABSPATH' ) || exit;
 
 $customer_id = get_current_user_id();
-$user = wp_get_current_user();
-$roles = ( array ) $user->roles; 
-$b2b_roles = th_return_option( 'b2b_roles' );
 
 if ( ! wc_ship_to_billing_address_only() && wc_shipping_enabled() ) {
 	$get_addresses = apply_filters(
@@ -48,7 +45,7 @@ $col    = 1;
 <p>
 	<?php echo apply_filters( 'woocommerce_my_account_my_address_description', esc_html__( 'The following addresses will be used on the checkout page by default.', 'woocommerce' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 	<?php 
-	if( count(array_intersect( $b2b_roles, $roles ) ) ) {
+	if( isb2b() ) {
 		echo '<p>Für eine Änderung der Adresse nehmen Sie bitte mit dem Töpferhaus Kontakt auf.</p>'; 
 	}
 	?>
@@ -71,7 +68,7 @@ $col    = 1;
 			<h3><?php echo esc_html( $address_title ); ?></h3>
 			<?php 
 			// Verhindere Stammkunden das bearbeiten der Adressen.
-			if( !count(array_intersect( $b2b_roles, $roles ) ) ) : ?>
+			if( !isb2b() ) : ?>
 			<a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="edit"><?php echo $address ? esc_html__( 'Edit', 'woocommerce' ) : esc_html__( 'Add', 'woocommerce' ); ?></a>
 			<?php endif; ?>
 		</header>
