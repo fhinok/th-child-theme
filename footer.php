@@ -111,13 +111,13 @@ if ($back_to_top_class == 'hide') {
 								if (mfn_opts_get('footer-copy')) {
 									echo do_shortcode(mfn_opts_get('footer-copy'));
 								} else {
-									echo '&copy; '. esc_html(date('Y')) .' '. esc_html(get_bloginfo('name')) .'. All Rights Reserved. ';
+									echo '&copy; '. esc_html(date('Y')) .' <a href="https://toepferhaus.ch">'. esc_html(get_bloginfo('name')) .'</a>. All Rights Reserved. ';
 								}
 							?>
 						</div>
 
                         <div class="links">
-                                <a href="/impressum">&nbsp;Impressum</a>. <a href="/datenschutz">Datenschutzerklärung</a>
+							<a href="/impressum">&nbsp;Impressum</a>. <a href="/datenschutz">Datenschutzerklärung</a>
                         </div>
 
 						<?php
