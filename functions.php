@@ -181,6 +181,24 @@ function isb2b( ) {
 	return false;
 }
 
+// Verstecke Meta auf Produktseite
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
+// Verstecke Gewisse Kategorien auf den Shopseiten
+add_filter( 'get_terms', 'th_get_subcategory_terms', 10, 3 );
+function th_get_subcategory_terms( $terms, $taxonomies, $args ) {
+	$new_terms = array();
+	if ( in_array( 'product_cat', $taxonomies ) && ! is_admin() &&is_shop() ) {
+		foreach( $terms as $key => $term ) {
+			if ( !in_array( $term->slug, array( 'unkategorisiert', 'box_saucen', 'box_pasta', 'box_pasta-gross', 'box-products' ) ) ) { 
+				$new_terms[] = $term;
+			}
+		}
+		$terms = $new_terms;
+	}
+	return $terms;
+}
+
 // füge abgeänderte Funktionen ein
 include_once('includes/wc-template-functions.php');
 include_once('includes/wc-account-functions.php');
