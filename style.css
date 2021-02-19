@@ -101,7 +101,7 @@ input[type="search"].aws-search-field::placeholder {
 
 @media screen and (max-width: 767px) {
     body .select2-container, body .ui-widget.ui-datepicker {
-        z-index: 9000009!important
+        z-index: 9!important
     }
 
     .select2-container, body .ui-widget.ui-datepicker {
@@ -145,4 +145,23 @@ div.wpt_product_table_wrapper table.wpt_product_table tbody tr.wpt_row>td, .cust
 /* WooCO Totalpreis ausblenden */
 .wooco_total.wooco-total.wooco-text {
     display: none!important;
+}
+
+@media only screen and (min-width: 1240px) {
+    #Top_bar.is-sticky { 
+        z-index:9999;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    button[type='submit']:not(#qib_id):not(#qib_id) {
+        margin-left: .3em!important;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    button[type='submit']:not(#qib_id):not(#qib_id) {
+        margin-left: 0!important;
+        width: 100%;
+    }
 }
