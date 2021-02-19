@@ -141,3 +141,8 @@ div.wpt_product_table_wrapper table.wpt_product_table tbody tr.wpt_row>td, .cust
 .woocommerce ul.products li.product .price, .woocommerce-page ul.products li.product .price {
     padding-bottom: 10px;
 }
+
+/* WooCO Totalpreis ausblenden */
+.wooco_total.wooco-total.wooco-text {
+    display: none!important;
+}
