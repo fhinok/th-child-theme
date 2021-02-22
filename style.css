@@ -165,3 +165,8 @@ div.wpt_product_table_wrapper table.wpt_product_table tbody tr.wpt_row>td, .cust
         width: 100%;
     }
 }
+
+.pager > .pages {
+    margin-top : 0;
+    margin-bottom: 30px;
+}

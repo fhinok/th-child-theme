@@ -199,6 +199,10 @@ function th_get_subcategory_terms( $terms, $taxonomies, $args ) {
 	return $terms;
 }
 
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+add_action( 'woocommerce_before_shop_loop', 'woocommerce_pagination', 20 );
+
 // füge abgeänderte Funktionen ein
 include_once('includes/wc-template-functions.php');
 include_once('includes/wc-account-functions.php');
