@@ -73,6 +73,10 @@ add_action( 'wp_enqueue_scripts', 'th_custom_srcipts' );
  * Link:	https://git.willsam.ch/fhinok/th-child-theme
  */
 
+function th_return_option( $name ) {
+	$option = preg_split( '/(\s*,*\s*)*,+(\s*,*\s*)*/', get_option( $name ));
+	return $option;
+}
 
 // Passt das Filtermenü an
 add_filter( 'woocommerce_catalog_orderby', 'th_rename_default_sorting_options' );
