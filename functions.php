@@ -61,7 +61,7 @@ add_filter('body_class', function($classes) {
 });
 
 function th_custom_srcipts () {
-	// wp_enqueue_script( 'custom-js', get_stylesheet_directory_uri() . '/main.js', array( 'jquery' ),'',true );
+	wp_enqueue_script( 'custom-js', get_stylesheet_directory_uri() . '/ultra.js', array( 'jquery' ),'',true );
 }
 add_action( 'wp_enqueue_scripts', 'th_custom_srcipts' );
 
