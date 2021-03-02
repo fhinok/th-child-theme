@@ -60,10 +60,10 @@ add_filter('body_class', function($classes) {
     return $classes;
 });
 
-function th_custom_srcipts () {
-	wp_enqueue_script( 'custom-js', get_stylesheet_directory_uri() . '/ultra.js', array( 'jquery' ),'',true );
+function th_theme_srcipts () {
+	wp_enqueue_script( 'theme-js', get_stylesheet_directory_uri() . '/scripts.js', array( 'jquery', 'jquery-ui-core', 'jquery-effects-slide' ),'',true );
 }
-add_action( 'wp_enqueue_scripts', 'th_custom_srcipts' );
+add_action( 'wp_enqueue_scripts', 'th_theme_srcipts' );
 
 
 ######################### TÖPFERHAUS FUNKTIONEN #########################
@@ -203,6 +203,7 @@ function th_get_subcategory_terms( $terms, $taxonomies, $args ) {
 	return $terms;
 }
 
+// Seitenauswahl vor und nach Produkten
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 add_action( 'woocommerce_before_shop_loop', 'woocommerce_pagination', 20 );
