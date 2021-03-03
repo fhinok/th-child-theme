@@ -161,7 +161,8 @@ div.vc_column-inner.vc_custom_1614696527171 {
 
 /* blurred images fix */
 img {
-    -webkit-backface-visibility: hidden; 
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     -ms-transform: translateZ(0);
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
