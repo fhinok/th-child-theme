@@ -159,6 +159,14 @@ div.vc_column-inner.vc_custom_1614696527171 {
     margin-bottom: 0;
 }
 
+/* blurred images fix */
+img {
+    -webkit-backface-visibility: hidden; 
+    -ms-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
 @media only screen and (min-width: 1244px) {
     /* 4 Produkte pro Zeile */
     .woocommerce .products_wrapper ul.products li.product {
