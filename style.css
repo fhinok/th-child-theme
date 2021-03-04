@@ -410,7 +410,7 @@ img {
     }
 
     #th_filters {
-        /* display: none; */
+        display: none;
         position: relative;
         margin-bottom: 2rem;
     }
