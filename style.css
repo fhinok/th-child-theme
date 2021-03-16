@@ -466,3 +466,15 @@ img {
     }
 }
 
+.ezusy-section .ezusy-img {
+    width: 60px;
+    height: 60px;
+}
+
+.ezusy-variations {
+    border-radius: 0;
+}
+
+.ezusy-active, .ezusy-variations:hover {
+    border: 1px solid #1babe5!important;
+}
