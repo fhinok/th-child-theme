@@ -478,3 +478,13 @@ img {
 .ezusy-active, .ezusy-variations:hover {
     border: 1px solid #1babe5!important;
 }
+
+/* Verstecke durchstrichen Preise */
+
+.price del > span.woocommerce-Price-amount {
+    display: none;
+}
+
+.price ins {
+    text-decoration: none;
+}
