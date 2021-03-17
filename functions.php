@@ -204,6 +204,16 @@ function th_get_subcategory_terms( $terms, $taxonomies, $args ) {
 	return $terms;
 }
 
+// Noscript Banner
+add_filter( 'wp_head', 'th_noscript', 20 );
+function th_noscript() {
+	?>
+	<!-- <noscript> -->
+		<div class="noscript">Sie haben JavaScript in ihrem Browser deaktiviert! Bitte beachten Sie, dass einige Funktionen in unserem Webshop nur mit aktiviertem JavaScript richtig funktionieren.</div>
+	<!-- </noscript> -->
+	<?php
+}
+
 // Seitenauswahl vor und nach Produkten
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
