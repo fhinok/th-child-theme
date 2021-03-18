@@ -60,11 +60,11 @@ add_filter('body_class', function($classes) {
     return $classes;
 });
 
-function th_theme_srcipts () {
+function th_theme_enqueue () {
 	wp_enqueue_script( 'theme-js', get_stylesheet_directory_uri() . '/scripts.js', array( 'jquery', 'jquery-ui-core', 'jquery-effects-slide' ),'',true );
 	wp_enqueue_style('dashicons');
 }
-add_action( 'wp_enqueue_scripts', 'th_theme_srcipts' );
+add_action( 'wp_enqueue_scripts', 'th_theme_enqueue' );
 
 
 ######################### TÖPFERHAUS FUNKTIONEN #########################
