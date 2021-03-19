@@ -17,7 +17,11 @@ Version: 1.6.2
 }
 
 .column_sidebar_widget .widget_product_categories {
-    margin-bottom: 30px;
+    margin-bottom: 80px;
+}
+
+.woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering {
+    float: none;
 }
 
 select.orderby {
