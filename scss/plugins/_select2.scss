@@ -1,0 +1,24 @@
+.select2-container--default .select2-selection--single, .select2-container--focus, .select2-selection--multiple {
+    border-radius: 0!important;
+    height: 32px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border: 2px solid black;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    margin-top: 1px;
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    body .select2-container, body .ui-widget.ui-datepicker {
+        z-index: 9!important
+    }
+
+    .select2-container, body .ui-widget.ui-datepicker {
+        z-index: -1!important;
+    }
+}

@@ -1,0 +1,101 @@
+.product-subcategories .woocommerce.columns-6 ul.products li.product {
+    width: 14.5%!important;
+}
+
+.woocommerce, .woocommerce-page {
+
+    .products_wrapper ul.products li.product {
+        @media only screen and (max-width: 768px) {
+            width: 48%;
+
+            &:nth-of-type(even) {
+                float: right;
+            }
+        }
+        @media only screen and (min-width: 1244px) {
+            width: 23%;
+
+            &:nth-child(3n+1) {
+                clear: none;
+            }
+        }
+    }
+
+    ul.products li.product {
+
+        .desc {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 130px;
+
+            @media only screen and (max-width: 768px) {
+                height: auto;
+            }
+
+            h4 {
+                order: 1;
+            }
+        }
+
+        span.price {
+            order: 2;
+            padding-bottom: 10px;
+        }
+
+        @media only screen and (min-width: 993px) and (max-width: 1244px) {
+            li.cat-item {
+                margin: 0;
+                width: 15%;
+            }
+        }
+
+    }
+
+    .woocommerce-customer-details address {
+        width: auto;
+        padding: 15px 15px 15px 80px;
+    }
+
+    &-MyAccount-content address {
+        padding: auto;
+    }
+
+}
+
+/* WooCO Totalpreis ausblenden */
+.wooco_total.wooco-total.wooco-text {
+    display: none!important;
+}
+
+.pager > .pages {
+    margin-top : 0;
+    margin-bottom: 30px;
+}
+
+div.vc_column-inner.vc_custom_1614696527171 {
+    margin-top: 0!important;
+}
+
+.ezusy-section .ezusy-img {
+    width: 60px;
+    height: 60px;
+}
+
+.ezusy-variations {
+    border-radius: 0;
+}
+
+.ezusy-active, .ezusy-variations:hover {
+    border: 1px solid #1babe5!important;
+}
+
+/* Verstecke durchstrichen Preise */
+
+.price del > span.woocommerce-Price-amount {
+    display: none;
+}
+
+.price ins {
+    text-decoration: none;
+}

@@ -1,0 +1,31 @@
+.search_single .query_box_direct_value,.instance_search_input{
+    padding: 7px 10px 7px 10px;
+}
+
+.search_single .query_box_direct_value:focus, .instance_search_input:focus {
+    outline: none;
+    border: 1px solid black;
+}
+
+.wpt_product_table_wrapper div.tables_cart_message_box div.widget_shopping_cart_content li a.remove::before {
+    display: none;
+}
+
+.button-custom a.remove {
+    padding: 0 !important;
+}
+
+table.add_cart_only_icon tr .wpt_action a.button:before {
+    /*content: "";*/
+    /* content: "\e01d";     */
+    z-index: 99999;
+    margin: 11px;
+    font-family: WooCommerce;
+    font-size: initial;
+    padding: 0 9px;
+}
+
+div.wpt_product_table_wrapper table.wpt_product_table tbody tr.wpt_row>td, .custom_table thead .wpt_table_header_row th {
+    text-align: left;
+}
+
