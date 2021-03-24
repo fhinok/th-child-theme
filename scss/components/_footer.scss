@@ -1,0 +1,34 @@
+#Footer {
+    background-color: $color_main_gray;
+}
+
+.contact {
+    width: 48%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+
+    input, textarea {
+        background-color: $color_secondary_gray;
+        border: 2px solid $color_secondary_gray;
+        color: #cccccc;
+
+        &:focus {
+            background-color: $color_secondary_gray!important;
+            border: 2px solid $color_main_blue;
+            color: #cccccc;
+        }
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
+
+    &.left {
+        order: 1;
+    }
+    
+    &.right {
+        order: 2;
+    }
+}
