@@ -7,11 +7,16 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: flex-start;
 }
 
 .contact {
     width: 49%;
     box-sizing: border-box;
+
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+    }
 
     input, textarea {
         background-color: $color_secondary_gray;
@@ -25,12 +30,14 @@
         }
     }
 
-    :not(:last-child) {
-        margin-bottom: 15px;
+    @media only screen and (min-width: 768px) {
+        :not(:last-child) {
+            margin-bottom: 15px;
+        }
     }
 
     textarea {
-        height: 212px;
+        height: 208px;
     }
 
     input[type="submit"] {
@@ -43,6 +50,10 @@
     
     &.right {
         order: 2;
+    }
+
+    &.submit {
+        order: 3;
     }
 
     &-footer {

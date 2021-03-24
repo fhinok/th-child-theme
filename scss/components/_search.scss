@@ -1,21 +1,21 @@
 input[type="search"].aws-search-field {
-    background-color: rgb(12, 172, 231) !important;
+    background-color: $color_main_blue !important;
     border: none;
     border-bottom: 2px solid rgb(247, 245, 240);
     box-shadow: none;
-    color:rgb(85, 85, 85);
+    color:$color_secondary_gray;
     font-size: 16px;
-}
 
-input[type="search"].aws-search-field::placeholder {
-    color: rgb(122, 122, 122);
+    &::placeholder {
+        color: rgb(122, 122, 122);
+    }
 }
 
 .aws-search-result {
     border-top: none;
-    border-bottom: 10px solid rgb(12, 172, 231);
-    border-left: 15px solid rgb(12, 172, 231);
-    border-right: 15px solid rgb(12, 172, 231);
+    border-bottom: 10px solid $color_main_blue;
+    border-left: 15px solid $color_main_blue;
+    border-right: 15px solid $color_main_blue;
     box-sizing: content-box;
     transform: translateX(-15px);
     background-color: rgb(247, 245, 240);

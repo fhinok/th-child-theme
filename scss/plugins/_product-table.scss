@@ -1,10 +1,10 @@
 .search_single .query_box_direct_value,.instance_search_input{
     padding: 7px 10px 7px 10px;
-}
 
-.search_single .query_box_direct_value:focus, .instance_search_input:focus {
-    outline: none;
-    border: 1px solid black;
+    &::focus {
+        outline: none;
+        border: 1px solid black;
+    }
 }
 
 .wpt_product_table_wrapper div.tables_cart_message_box div.widget_shopping_cart_content li a.remove::before {
