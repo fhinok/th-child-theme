@@ -2,11 +2,16 @@
     background-color: $color_main_gray;
 }
 
-.contact {
-    width: 48%;
-    height: 100%;
+#contact {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact {
+    width: 49%;
+    box-sizing: border-box;
 
     input, textarea {
         background-color: $color_secondary_gray;
@@ -20,6 +25,14 @@
         }
     }
 
+    :not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    textarea {
+        height: 214px;
+    }
+
     input[type="submit"] {
         width: 100%;
     }
@@ -31,4 +44,13 @@
     &.right {
         order: 2;
     }
+
+    &-footer {
+        order: 3;
+        width: 100%;
+    }
+}
+
+.the_content {
+    box-shadow: 0 27px 25px -2px rgba(0,0,0,0.3);
 }
