@@ -1,6 +1,7 @@
 // system
 @import 'sys/vars';
 @import 'sys/base';
+@import 'sys/typo';
 
 // plugins
 @import 'plugins/woocommerce';
@@ -9,6 +10,7 @@
 
 // components
 @import 'components/search';
+@import 'components/header';
 @import 'components/categories';
 @import 'components/filter';
 @import 'components/footer';

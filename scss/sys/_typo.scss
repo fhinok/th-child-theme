@@ -1,0 +1,57 @@
+#Footer .widget {
+    p {
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+    h4 {
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    a {
+        color: rgb(204, 204, 204);
+        position: relative;
+        transition: color .5s ease;
+
+        &:hover {
+            color: $color_main_blue;
+            text-decoration: none;
+            
+            &::after {
+                content: ' ';
+                display: inline;
+                width: 100%;
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                height: 2px;
+                background-color: $color_main_blue;
+                animation: link-hover-in .5s cubic-bezier(.2,.75,.5,1);
+            }
+        }
+
+        &::after {
+            content: ' ';
+            display: inline;
+            width: 0%;
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            height: 2px;
+            background-color: $color_main_blue;
+            animation: link-hover-out .5s cubic-bezier(.2,.75,.5,1);
+        }
+
+    }
+}
+
+@keyframes link-hover-in {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+@keyframes link-hover-out {
+    0% { width: 100%; }
+    100% { width: 0%; }
+}

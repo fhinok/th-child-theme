@@ -20,6 +20,90 @@ img {
   padding: 20px 30px;
 }
 
+#Footer .widget p {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+#Footer .widget h4 {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#Footer .widget a {
+  color: #cccccc;
+  position: relative;
+  -webkit-transition: color .5s ease;
+  transition: color .5s ease;
+}
+
+#Footer .widget a:hover {
+  color: #1babe5;
+  text-decoration: none;
+}
+
+#Footer .widget a:hover::after {
+  content: ' ';
+  display: inline;
+  width: 100%;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background-color: #1babe5;
+  -webkit-animation: link-hover-in 0.5s cubic-bezier(0.2, 0.75, 0.5, 1);
+          animation: link-hover-in 0.5s cubic-bezier(0.2, 0.75, 0.5, 1);
+}
+
+#Footer .widget a::after {
+  content: ' ';
+  display: inline;
+  width: 0%;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background-color: #1babe5;
+  -webkit-animation: link-hover-out 0.5s cubic-bezier(0.2, 0.75, 0.5, 1);
+          animation: link-hover-out 0.5s cubic-bezier(0.2, 0.75, 0.5, 1);
+}
+
+@-webkit-keyframes link-hover-in {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes link-hover-in {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes link-hover-out {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+@keyframes link-hover-out {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
 .product-subcategories .woocommerce.columns-6 ul.products li.product {
   width: 14.5% !important;
 }
@@ -220,6 +304,10 @@ input[type="search"].aws-search-field::placeholder {
 
 .search_single .query_box_direct_value, .instance_search_input {
   border-radius: 0 !important;
+}
+
+#Top_bar.is-sticky {
+  opacity: 1;
 }
 
 @media only screen and (max-width: 768px) {
@@ -492,6 +580,27 @@ select.orderby {
 
 #Footer {
   background-color: #252525;
+}
+
+#Footer .widget h4 {
+  color: #777;
+}
+
+#back_to_top.footer_button {
+  height: 30px;
+  width: 30px;
+  right: 25px;
+  line-height: 30px !important;
+  font-size: 14px !important;
+  color: #fff !important;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: none;
+  -webkit-transition: background .5s ease;
+  transition: background .5s ease;
+}
+
+#back_to_top.footer_button:hover {
+  background-color: #1babe5;
 }
 
 #contact {

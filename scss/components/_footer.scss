@@ -1,5 +1,27 @@
 #Footer {
     background-color: $color_main_gray;
+
+    .widget {
+        h4 {
+            color: #777;
+        }
+    }
+}
+
+#back_to_top.footer_button {
+    height: 30px;
+    width: 30px;
+    right: 25px;
+    line-height: 30px!important;
+    font-size: 14px!important;
+    color: #fff!important;
+    background-color: rgba(0,0,0,0.25);
+    border: none;
+    transition: background .5s ease;
+
+    &:hover {
+        background-color: $color_main_blue;
+    }
 }
 
 #contact {
