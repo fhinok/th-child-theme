@@ -12,14 +12,26 @@ jQuery(function ($) {
             $(".toggle_filters_icon").toggleClass("rotate");
         })
 
-        function remove_cat_from_filter(cat) {
-            var el = $('input[value=' + cat +']').parent()
-            el.css('display', 'none');
+        // Hack um Hauptkategoire auszublenden
+        function remove_cat_from_filter(cats) {
+            var el = "";
+            try {
+                $.each(cats, (key, cat) => {
+                    el = $('input[value=' + cat +']').parent()
+                    el.css('display', 'none');
+                });
+            }
+            catch(e) {
+                return;
+            }
             return
         }
-
-        remove_cat_from_filter('frischprodukte');
-        remove_cat_from_filter('backwaren');
-        remove_cat_from_filter('teigwaren');
+        
+        cats = ['frischprodukte', 'backwaren', 'teigwaren'];
+        remove_cat_from_filter(cats);
+        
+        $(document).on('berocket_ajax_products_loaded', function() {
+            remove_cat_from_filter(cats);
+        });
     });
 });
