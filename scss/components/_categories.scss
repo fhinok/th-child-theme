@@ -22,6 +22,84 @@
         }
 
         li.cat-item {
+
+            a {
+                transition: all .25s ease;
+            }
+
+            &-56 a::before {
+                content:'';
+                background-image:url("https://shopdemo.web-stat.ch/wp-content/uploads/2021/03/TH-Bachfisch.svg"); 
+                width: 50px; 
+                height: 50px;
+                margin: auto; 
+                margin-bottom: 1rem; 
+                display: block; 
+                background-repeat: no-repeat;
+            }
+
+            &-26 a::before {
+                content:'';
+                background-image:url("https://shopdemo.web-stat.ch/wp-content/uploads/2021/03/TH-Backwaren.svg"); 
+                width: 50px; 
+                height: 50px; 
+                margin: auto; 
+                margin-bottom: 1rem; 
+                display: block; 
+                background-repeat: no-repeat;
+            }
+
+            &-66 a::before {
+                content:'';
+                background-image:url("https://shopdemo.web-stat.ch/wp-content/uploads/2021/03/TH-Frischprodukte.svg"); 
+                width: 50px; 
+                height: 50px; 
+                margin: auto; 
+                margin-bottom: 1.2rem; 
+                display: block; 
+                background-repeat: no-repeat;
+            }
+
+            &-33 a::before {
+                content:'';
+                background-image:url("https://shopdemo.web-stat.ch/wp-content/uploads/2021/03/TH-Goldstück.svg"); 
+                width: 50px; 
+                height: 50px; 
+                margin: auto; 
+                margin-bottom: 1rem; 
+                display: block; 
+                background-repeat: no-repeat;
+            }
+
+            &-46 a::before {
+                content:'';
+                background-image:url("https://shopdemo.web-stat.ch/wp-content/uploads/2021/03/TH-Karte.svg"); 
+                width: 45px; 
+                height: 45px; 
+                margin: auto; 
+                margin-bottom: 1.4rem; 
+                display: block; 
+                background-repeat: no-repeat;
+            }
+
+            &-20 a::before {
+                content:'';
+                background-image:url("https://shopdemo.web-stat.ch/wp-content/uploads/2021/03/TH-Pasta.svg"); 
+                width: 48px; 
+                height: 48px; 
+                margin: auto; 
+                margin-bottom: 1rem; 
+                display: block; 
+                background-repeat: no-repeat;
+            }
+            &-15 {
+                display: none!important;
+            }
+            &-104 {
+                display: none!important;
+            }
+
+
             @media only screen and (max-width: 768px) {
                 margin-right: .4rem;
                 margin-bottom: .9rem;
