@@ -715,67 +715,54 @@ select.orderby {
           align-items: flex-start;
 }
 
-.contact {
+#contact .contact {
   width: 49%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 @media only screen and (max-width: 768px) {
-  .contact {
+  #contact .contact {
     width: 100%;
   }
 }
 
-.contact input, .contact textarea {
+#contact .contact input, #contact .contact textarea {
   background-color: #555555;
   border: 2px solid #555555;
   color: #cccccc;
 }
 
-.contact input:focus, .contact textarea:focus {
+#contact .contact input:focus, #contact .contact textarea:focus {
   background-color: #555555 !important;
   border: 2px solid #1babe5;
   color: #cccccc;
 }
 
 @media only screen and (min-width: 768px) {
-  .contact :not(:last-child) {
+  #contact .contact :not(:last-child) {
     margin-bottom: 15px;
   }
 }
 
-.contact textarea {
-  height: 208px;
+#contact .contact textarea {
+  height: 100%;
 }
 
-.contact input[type="submit"] {
+#contact .contact input[type="submit"] {
   width: 100%;
 }
 
-.contact.left {
+#contact .contact.left {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
 }
 
-.contact.right {
+#contact .contact.right {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
-}
-
-.contact.submit {
-  -webkit-box-ordinal-group: 4;
-      -ms-flex-order: 3;
-          order: 3;
-}
-
-.contact-footer {
-  -webkit-box-ordinal-group: 4;
-      -ms-flex-order: 3;
-          order: 3;
-  width: 100%;
 }
 
 #Content {
