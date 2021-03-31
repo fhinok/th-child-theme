@@ -24,7 +24,18 @@
         li.cat-item {
 
             a {
+                font-size: 13pt;
+                text-align: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                text-decoration: none;
                 transition: all .25s ease;
+                color: #000!important;
+
+                &:hover {
+                    color: #0CACE7!important;
+                }
             }
 
             &-56 a::before {
@@ -92,11 +103,17 @@
                 display: block; 
                 background-repeat: no-repeat;
             }
+
             &-15 {
                 display: none!important;
             }
+
             &-104 {
                 display: none!important;
+            }
+
+            &:not(:last-child) {
+                margin-right: 4rem;
             }
 
 

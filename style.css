@@ -347,8 +347,19 @@ input[type="search"].aws-search-field::placeholder {
 }
 
 .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item a {
+  font-size: 13pt;
+  text-align: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-decoration: none;
   -webkit-transition: all .25s ease;
   transition: all .25s ease;
+  color: #000 !important;
+}
+
+.column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item a:hover {
+  color: #0CACE7 !important;
 }
 
 .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-56 a::before {
@@ -423,6 +434,10 @@ input[type="search"].aws-search-field::placeholder {
 
 .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-104 {
   display: none !important;
+}
+
+.column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item:not(:last-child) {
+  margin-right: 4rem;
 }
 
 @media only screen and (max-width: 768px) {
