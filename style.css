@@ -698,71 +698,158 @@ select.orderby {
 }
 
 #contact {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-
-#contact .contact {
-  width: 49%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  -ms-grid-rows: 20% 20% 20% 20% 20%;
+      grid-template-rows: 20% 20% 20% 20% 20%;
+  -webkit-column-gap: 15px;
+          column-gap: 15px;
 }
 
 @media only screen and (max-width: 768px) {
-  #contact .contact {
-    width: 100%;
+  #contact {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 50px 50px 50px 50px 200px 50px;
+        grid-template-rows: 50px 50px 50px 50px 200px 50px;
   }
 }
 
-#contact .contact input, #contact .contact textarea {
+#contact .wpcf7-form-control-wrap {
+  margin-bottom: 10px;
+}
+
+#contact .your-message {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  -ms-grid-row-span: 5;
+      grid-row-end: span 5;
+}
+
+@media only screen and (max-width: 768px) {
+  #contact .your-message {
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    -ms-grid-row: 5;
+        grid-row-start: 5;
+    grid-row-end: 5;
+  }
+}
+
+#contact .your-subject {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  #contact .your-subject {
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    -ms-grid-row: 4;
+        grid-row-start: 4;
+  }
+}
+
+#contact .your-name {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+}
+
+@media only screen and (max-width: 768px) {
+  #contact .your-name {
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    -ms-grid-row: 1;
+        grid-row-start: 1;
+  }
+}
+
+#contact .your-email {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  -ms-grid-row: 3;
+      grid-row-start: 3;
+}
+
+@media only screen and (max-width: 768px) {
+  #contact .your-email {
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    -ms-grid-row: 2;
+        grid-row-start: 2;
+  }
+}
+
+#contact .your-phone {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  -ms-grid-row: 4;
+      grid-row-start: 4;
+}
+
+@media only screen and (max-width: 768px) {
+  #contact .your-phone {
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    -ms-grid-row: 3;
+        grid-row-start: 3;
+  }
+}
+
+#contact .submit {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  -ms-grid-row: 5;
+      grid-row-start: 5;
+}
+
+@media only screen and (max-width: 768px) {
+  #contact .submit {
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    -ms-grid-row: 6;
+        grid-row-start: 6;
+  }
+}
+
+#contact input:not(input[type="submit"]), #contact textarea {
   background-color: #555555;
   border: 2px solid #555555;
   color: #cccccc;
+  width: 100%;
 }
 
-#contact .contact input:focus, #contact .contact textarea:focus {
+#contact input:not(input[type="submit"]):focus, #contact textarea:focus {
   background-color: #555555 !important;
   border: 2px solid #1babe5;
   color: #cccccc;
 }
 
-@media only screen and (min-width: 768px) {
-  #contact .contact :not(:last-child) {
-    margin-bottom: 15px;
-  }
+#contact textarea {
+  height: 99%;
 }
 
-#contact .contact textarea {
-  height: 100%;
-}
-
-#contact .contact input[type="submit"] {
+#contact input[type="submit"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 100%;
+  height: 40.8px;
+  border-color: #555555;
+  color: #555555;
 }
 
-#contact .contact.left {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
-}
-
-#contact .contact.right {
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
+#contact input[type="submit"]:hover {
+  color: #fff;
+  border-color: #1babe5;
 }
 
 #Content {

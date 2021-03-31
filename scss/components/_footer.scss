@@ -25,52 +25,113 @@
 }
 
 #contact {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    column-gap: 15px;
 
-    .contact {
-        width: 49%;
-        box-sizing: border-box;
-    
+    @media only screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px 50px 50px 50px 200px 50px;
+    }
+
+    .wpcf7-form-control-wrap {
+        margin-bottom: 10px;
+
+    }
+
+    .your-message {
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-row-end: span 5;
+
         @media only screen and (max-width: 768px) {
-            width: 100%;
+            grid-column-start: 1;
+            grid-row-start: 5;
+            grid-row-end: 5; 
         }
-    
-        input, textarea {
-            background-color: $color_secondary_gray;
-            border: 2px solid $color_secondary_gray;
-            color: #cccccc;
-    
-            &:focus {
-                background-color: $color_secondary_gray!important;
-                border: 2px solid $color_main_blue;
-                color: #cccccc;
-            }
+    }
+
+    .your-subject {
+        grid-column-start: 2;
+        grid-row-start: 1;
+
+        @media only screen and (max-width: 768px) {
+            grid-column-start: 1;
+            grid-row-start: 4;
         }
-    
-        @media only screen and (min-width: 768px) {
-            :not(:last-child) {
-                margin-bottom: 15px;
-            }
+    }
+
+    .your-name {
+        grid-column-start: 2;
+        grid-row-start: 2;
+
+        @media only screen and (max-width: 768px) {
+            grid-column-start: 1;
+            grid-row-start: 1;
         }
-    
-        textarea {
-            height: 100%;
+    }
+
+    .your-email {
+        grid-column-start: 2;
+        grid-row-start: 3;
+
+        @media only screen and (max-width: 768px) {
+            grid-column-start: 1;
+            grid-row-start: 2;
         }
-    
-        input[type="submit"] {
-            width: 100%;
-        }
-    
-        &.left {
-            order: 1;
-        }
+
+    }
+
+    .your-phone {
+        grid-column-start: 2;
+        grid-row-start: 4;
         
-        &.right {
-            order: 2;
+        @media only screen and (max-width: 768px) {
+            grid-column-start: 1;
+            grid-row-start: 3;
+        }
+
+    }
+
+    .submit {
+        grid-column-start: 2;
+        grid-row-start: 5;
+
+        @media only screen and (max-width: 768px) {
+            grid-column-start: 1;
+            grid-row-start: 6;
+        }
+    }
+    
+    input:not(input[type="submit"]), textarea {
+        background-color: $color_secondary_gray;
+        border: 2px solid $color_secondary_gray;
+        color: #cccccc;
+        width: 100%;
+
+        &:focus {
+            background-color: $color_secondary_gray!important;
+            border: 2px solid $color_main_blue;
+            color: #cccccc;
+        }
+    }
+
+    textarea {
+        height: 99%;
+    }
+
+    input[type="submit"] {
+        box-sizing: border-box;
+        width: 100%;
+        height: 40.8px;
+        border-color: $color_secondary_gray;
+        color: $color_secondary_gray;
+
+        &:hover {
+            color: #fff;
+            border-color: $color_main_blue;
         }
     }
 }
