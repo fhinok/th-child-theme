@@ -1,11 +1,18 @@
 .select2-container--default .select2-selection--single, .select2-container--focus, .select2-selection--multiple {
-    border-radius: 0!important;
-    height: 32px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border: 2px solid black;
+
+    &:not( :nth-child(2) ) {
+        border-radius: 0!important;
+        height: 32px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border: 2px solid black;
+    }
+
+    &:focus {
+        outline: none!important;
+    }
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
