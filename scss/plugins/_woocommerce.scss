@@ -4,6 +4,76 @@
 
 .woocommerce, .woocommerce-page {
 
+    &-order-details, .shop_table.woocommerce-checkout-review-order-table {
+    
+        .product-quantity {
+            display: inline-block;
+            margin-right: 6px;
+            width: 35px;
+            text-align: right;
+        }
+
+        tbody, thead {
+            th {
+                text-align: left;
+            }
+
+            td.product-total {
+                text-align: left;
+
+                .amount {
+                    display: inline-block;
+                    width: 80px;
+                    text-align: right;
+                }
+
+                bdi {
+                    width: 100%;
+                
+                    .woocommerce-Price-currencySymbol {
+                        float: left;
+                    }
+                }
+            }
+        }
+
+        tfoot {
+            th {
+                text-align: right;
+                width: 65%;
+            }
+
+            td {
+                width: 35%;
+                text-align: left;
+
+                label .amount {
+                    display: inline;
+                    width: auto;
+                    text-align: left;
+
+                    .woocommerce-Price-currencySymbol {
+                        float: none;
+                    }
+                }
+
+                .amount {
+                    display: inline-block;
+                    width: 80px;
+                    text-align: right;
+                }
+
+                .woocommerce-Price-currencySymbol {
+                    float: left;
+                }
+            }
+        }
+    }
+
+    .woocommerce-Price-currencySymbol  {
+        margin-right: 3px;
+    }
+
     .products_wrapper ul.products li.product {
         @media only screen and (max-width: 768px) {
             width: 48%;
@@ -34,13 +104,14 @@
             }
 
             h4 {
-                order: 1;
+                order: 2;
             }
-        }
 
-        span.price {
-            order: 2;
-            padding-bottom: 10px;
+            span.price {
+                order: 1;
+                padding-bottom: 10px;
+                
+            }
         }
 
         @media only screen and (min-width: 993px) and (max-width: 1244px) {

@@ -108,6 +108,69 @@ img {
   width: 14.5% !important;
 }
 
+.woocommerce-order-details .product-quantity, .woocommerce .shop_table.woocommerce-checkout-review-order-table .product-quantity, .woocommerce-page-order-details .product-quantity, .woocommerce-page .shop_table.woocommerce-checkout-review-order-table .product-quantity {
+  display: inline-block;
+  margin-right: 6px;
+  width: 35px;
+  text-align: right;
+}
+
+.woocommerce-order-details tbody th, .woocommerce-order-details thead th, .woocommerce .shop_table.woocommerce-checkout-review-order-table tbody th, .woocommerce .shop_table.woocommerce-checkout-review-order-table thead th, .woocommerce-page-order-details tbody th, .woocommerce-page-order-details thead th, .woocommerce-page .shop_table.woocommerce-checkout-review-order-table tbody th, .woocommerce-page .shop_table.woocommerce-checkout-review-order-table thead th {
+  text-align: left;
+}
+
+.woocommerce-order-details tbody td.product-total, .woocommerce-order-details thead td.product-total, .woocommerce .shop_table.woocommerce-checkout-review-order-table tbody td.product-total, .woocommerce .shop_table.woocommerce-checkout-review-order-table thead td.product-total, .woocommerce-page-order-details tbody td.product-total, .woocommerce-page-order-details thead td.product-total, .woocommerce-page .shop_table.woocommerce-checkout-review-order-table tbody td.product-total, .woocommerce-page .shop_table.woocommerce-checkout-review-order-table thead td.product-total {
+  text-align: left;
+}
+
+.woocommerce-order-details tbody td.product-total .amount, .woocommerce-order-details thead td.product-total .amount, .woocommerce .shop_table.woocommerce-checkout-review-order-table tbody td.product-total .amount, .woocommerce .shop_table.woocommerce-checkout-review-order-table thead td.product-total .amount, .woocommerce-page-order-details tbody td.product-total .amount, .woocommerce-page-order-details thead td.product-total .amount, .woocommerce-page .shop_table.woocommerce-checkout-review-order-table tbody td.product-total .amount, .woocommerce-page .shop_table.woocommerce-checkout-review-order-table thead td.product-total .amount {
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+}
+
+.woocommerce-order-details tbody td.product-total bdi, .woocommerce-order-details thead td.product-total bdi, .woocommerce .shop_table.woocommerce-checkout-review-order-table tbody td.product-total bdi, .woocommerce .shop_table.woocommerce-checkout-review-order-table thead td.product-total bdi, .woocommerce-page-order-details tbody td.product-total bdi, .woocommerce-page-order-details thead td.product-total bdi, .woocommerce-page .shop_table.woocommerce-checkout-review-order-table tbody td.product-total bdi, .woocommerce-page .shop_table.woocommerce-checkout-review-order-table thead td.product-total bdi {
+  width: 100%;
+}
+
+.woocommerce-order-details tbody td.product-total bdi .woocommerce-Price-currencySymbol, .woocommerce-order-details thead td.product-total bdi .woocommerce-Price-currencySymbol, .woocommerce .shop_table.woocommerce-checkout-review-order-table tbody td.product-total bdi .woocommerce-Price-currencySymbol, .woocommerce .shop_table.woocommerce-checkout-review-order-table thead td.product-total bdi .woocommerce-Price-currencySymbol, .woocommerce-page-order-details tbody td.product-total bdi .woocommerce-Price-currencySymbol, .woocommerce-page-order-details thead td.product-total bdi .woocommerce-Price-currencySymbol, .woocommerce-page .shop_table.woocommerce-checkout-review-order-table tbody td.product-total bdi .woocommerce-Price-currencySymbol, .woocommerce-page .shop_table.woocommerce-checkout-review-order-table thead td.product-total bdi .woocommerce-Price-currencySymbol {
+  float: left;
+}
+
+.woocommerce-order-details tfoot th, .woocommerce .shop_table.woocommerce-checkout-review-order-table tfoot th, .woocommerce-page-order-details tfoot th, .woocommerce-page .shop_table.woocommerce-checkout-review-order-table tfoot th {
+  text-align: right;
+  width: 65%;
+}
+
+.woocommerce-order-details tfoot td, .woocommerce .shop_table.woocommerce-checkout-review-order-table tfoot td, .woocommerce-page-order-details tfoot td, .woocommerce-page .shop_table.woocommerce-checkout-review-order-table tfoot td {
+  width: 35%;
+  text-align: left;
+}
+
+.woocommerce-order-details tfoot td label .amount, .woocommerce .shop_table.woocommerce-checkout-review-order-table tfoot td label .amount, .woocommerce-page-order-details tfoot td label .amount, .woocommerce-page .shop_table.woocommerce-checkout-review-order-table tfoot td label .amount {
+  display: inline;
+  width: auto;
+  text-align: left;
+}
+
+.woocommerce-order-details tfoot td label .amount .woocommerce-Price-currencySymbol, .woocommerce .shop_table.woocommerce-checkout-review-order-table tfoot td label .amount .woocommerce-Price-currencySymbol, .woocommerce-page-order-details tfoot td label .amount .woocommerce-Price-currencySymbol, .woocommerce-page .shop_table.woocommerce-checkout-review-order-table tfoot td label .amount .woocommerce-Price-currencySymbol {
+  float: none;
+}
+
+.woocommerce-order-details tfoot td .amount, .woocommerce .shop_table.woocommerce-checkout-review-order-table tfoot td .amount, .woocommerce-page-order-details tfoot td .amount, .woocommerce-page .shop_table.woocommerce-checkout-review-order-table tfoot td .amount {
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+}
+
+.woocommerce-order-details tfoot td .woocommerce-Price-currencySymbol, .woocommerce .shop_table.woocommerce-checkout-review-order-table tfoot td .woocommerce-Price-currencySymbol, .woocommerce-page-order-details tfoot td .woocommerce-Price-currencySymbol, .woocommerce-page .shop_table.woocommerce-checkout-review-order-table tfoot td .woocommerce-Price-currencySymbol {
+  float: left;
+}
+
+.woocommerce .woocommerce-Price-currencySymbol, .woocommerce-page .woocommerce-Price-currencySymbol {
+  margin-right: 3px;
+}
+
 @media only screen and (max-width: 768px) {
   .woocommerce .products_wrapper ul.products li.product, .woocommerce-page .products_wrapper ul.products li.product {
     width: 48%;
@@ -145,15 +208,15 @@ img {
 }
 
 .woocommerce ul.products li.product .desc h4, .woocommerce-page ul.products li.product .desc h4 {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
-}
-
-.woocommerce ul.products li.product span.price, .woocommerce-page ul.products li.product span.price {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+}
+
+.woocommerce ul.products li.product .desc span.price, .woocommerce-page ul.products li.product .desc span.price {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
   padding-bottom: 10px;
 }
 
