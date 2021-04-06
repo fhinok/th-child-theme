@@ -19,3 +19,9 @@ img {
     z-index: 9999;
     padding: 20px 30px;
 }
+
+table {
+    th, td {
+        vertical-align: top;
+    }
+}
