@@ -13,6 +13,12 @@
         }
     }
 
+    &-variation {
+        &-price {
+            display: none;
+        }
+    }
+
     &-order-details, .shop_table.woocommerce-checkout-review-order-table {
     
         .product-quantity {

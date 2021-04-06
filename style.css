@@ -119,6 +119,10 @@ table th, table td {
   padding-left: 15px;
 }
 
+.woocommerce-variation-price, .woocommerce-page-variation-price {
+  display: none;
+}
+
 .woocommerce-order-details .product-quantity, .woocommerce .shop_table.woocommerce-checkout-review-order-table .product-quantity, .woocommerce-page-order-details .product-quantity, .woocommerce-page .shop_table.woocommerce-checkout-review-order-table .product-quantity {
   display: inline-block;
   margin-right: 6px;
