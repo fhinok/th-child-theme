@@ -112,6 +112,13 @@ table th, table td {
   width: 14.5% !important;
 }
 
+.woocommerce table.shop_attributes td, .woocommerce-page table.shop_attributes td {
+  vertical-align: middle;
+  font-style: normal;
+  text-align: left;
+  padding-left: 15px;
+}
+
 .woocommerce-order-details .product-quantity, .woocommerce .shop_table.woocommerce-checkout-review-order-table .product-quantity, .woocommerce-page-order-details .product-quantity, .woocommerce-page .shop_table.woocommerce-checkout-review-order-table .product-quantity {
   display: inline-block;
   margin-right: 6px;

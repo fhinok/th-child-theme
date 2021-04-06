@@ -4,6 +4,15 @@
 
 .woocommerce, .woocommerce-page {
 
+    table.shop_attributes {
+        td {
+            vertical-align: middle;
+            font-style: normal;
+            text-align: left;
+            padding-left: 15px;
+        }
+    }
+
     &-order-details, .shop_table.woocommerce-checkout-review-order-table {
     
         .product-quantity {
