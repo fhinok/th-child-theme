@@ -43,6 +43,10 @@
                         filter: drop-shadow(0 0 4px rgba($color_main_blue, .8));
                     }
                 }
+
+                @media only screen and (max-width: 768px) {
+                    font-size: 10pt;
+                }
             }
 
             &-56 a::before {
@@ -119,15 +123,17 @@
                 display: none!important;
             }
 
-            &:not(:last-child) {
-                margin-right: 4rem;
+            @media only screen and (min-width: 769px) {
+                &:not(:last-child) {
+                    margin-right: 3rem;
+                }
             }
 
 
             @media only screen and (max-width: 768px) {
                 margin-right: .4rem;
                 margin-bottom: .9rem;
-                width: 31%;
+                width: 23%;
                 align-self: baseline;
             }
 

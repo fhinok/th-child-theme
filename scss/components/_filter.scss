@@ -77,7 +77,11 @@
 }
 
 .column_sidebar_widget .widget_product_categories {
-    margin-bottom: 80px;
+    margin-bottom: 70px;
+
+    @media only screen and (max-width: 768px) {
+        margin-bottom: 10px;
+    }
 }
 
 .woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering {

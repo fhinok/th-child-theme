@@ -455,6 +455,12 @@ input[type="search"].aws-search-field::placeholder {
           filter: drop-shadow(0 0 4px rgba(27, 171, 229, 0.8));
 }
 
+@media only screen and (max-width: 768px) {
+  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item a {
+    font-size: 10pt;
+  }
+}
+
 .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-56 a::before {
   content: '';
   background-image: url("https://shopdemo.web-stat.ch/wp-content/uploads/2021/03/TH-Bachfisch.svg");
@@ -529,15 +535,17 @@ input[type="search"].aws-search-field::placeholder {
   display: none !important;
 }
 
-.column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item:not(:last-child) {
-  margin-right: 4rem;
+@media only screen and (min-width: 769px) {
+  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item:not(:last-child) {
+    margin-right: 3rem;
+  }
 }
 
 @media only screen and (max-width: 768px) {
   .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item {
     margin-right: .4rem;
     margin-bottom: .9rem;
-    width: 31%;
+    width: 23%;
     -ms-flex-item-align: baseline;
         align-self: baseline;
   }
@@ -651,7 +659,13 @@ input[type="search"].aws-search-field::placeholder {
 }
 
 .column_sidebar_widget .widget_product_categories {
-  margin-bottom: 80px;
+  margin-bottom: 70px;
+}
+
+@media only screen and (max-width: 768px) {
+  .column_sidebar_widget .widget_product_categories {
+    margin-bottom: 10px;
+  }
 }
 
 .woocommerce .woocommerce-ordering, .woocommerce-page .woocommerce-ordering {
