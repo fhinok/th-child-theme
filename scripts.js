@@ -34,4 +34,17 @@ jQuery(function ($) {
             remove_cat_from_filter(cats);
         });
     });
+
+    $(document).ready( function() {
+        $('.woocommerce-product-attributes-item__value p').html( function() {
+            var text = $(this).text();
+            allergene.forEach(allergen => {
+                var regex = new RegExp('\\b(?=\\w*' + allergen + ')\\w+\\b', 'gi');
+                var match = text.match(regex);
+                text = text.replace(match, '<strong class="allergen">' + match + '</strong>');
+                return text;
+            });
+            $(this).html(text);
+        });
+    } )
 });

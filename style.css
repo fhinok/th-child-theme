@@ -242,6 +242,10 @@ table th, table td {
   }
 }
 
+.woocommerce .woocommerce-product-attributes-item__value strong.allergen, .woocommerce-page .woocommerce-product-attributes-item__value strong.allergen {
+  text-transform: uppercase;
+}
+
 .woocommerce .woocommerce-customer-details address, .woocommerce-page .woocommerce-customer-details address {
   width: auto;
   padding: 15px 15px 15px 80px;

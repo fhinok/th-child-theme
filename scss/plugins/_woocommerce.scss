@@ -138,6 +138,12 @@
 
     }
 
+    .woocommerce-product-attributes-item__value {
+        strong.allergen {
+            text-transform: uppercase;
+        }
+    }
+
     .woocommerce-customer-details address {
         width: auto;
         padding: 15px 15px 15px 80px;
