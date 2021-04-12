@@ -39,9 +39,11 @@ jQuery(function ($) {
         $('.woocommerce-product-attributes-item__value p').html( function() {
             var text = $(this).text();
             allergene.forEach(allergen => {
-                var regex = new RegExp('\\b(?=\\w*' + allergen + ')\\w+\\b', 'gi');
+                var regex = new RegExp('\\b(\\p{L}*)?(' + allergen + ')(\\p{L}+)?\\b', 'giu');
                 var match = text.match(regex);
-                text = text.replace(match, '<strong class="allergen">' + match + '</strong>');
+                if (match) match.forEach(value => {
+                    text = text.replace(value, '<strong class="allergen">' + value + '</strong>');
+                })
                 return text;
             });
             $(this).html(text);
