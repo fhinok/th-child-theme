@@ -49,7 +49,8 @@ if ($back_to_top_class == 'hide') {
 				$align = mfn_opts_get('footer-align');
 
 				echo '<div class="widgets_wrapper '. $align .'">';
-					echo '<div class="container">';
+				
+				echo '<div class="container">';
 
 						if ($footer_layout = mfn_opts_get('footer-layout')) {
 
@@ -88,7 +89,6 @@ if ($back_to_top_class == 'hide') {
 							}
 
 						}
-
 					echo '</div>';
 				echo '</div>';
 			}
@@ -169,8 +169,62 @@ if ($back_to_top_class == 'hide') {
 <?php endif; ?>
 
 <?php do_action('mfn_hook_bottom'); ?>
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCipobJfajxCJblhNpQj9pS2ahW4P2pSaw&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
 
+<script>
+	let map;
+	let markers = [];
+	function initMap() {
+		const center_location = { lat: 47.38083812629795, lng: 8.06602044797135 };
+		const atelier_location = { lat: 47.39060611657107, lng: 8.053645363362653 };
+		const bachstrasse_location = { lat: 47.38636673097061, lng: 8.057152546717441 };
+		const suhr_location = { lat: 47.3671549277468, lng: 8.08368075893751 };
+		map = new google.maps.Map(document.getElementById('map'), {
+			center: center_location,
+			zoom: 13,
+			disableDefaultUI: true,
+		})
+
+		addMarker(atelier_location);
+		addMarker(bachstrasse_location);
+		addMarker(suhr_location);
+
+		const atelier_button = document.getElementById("atelier");
+		const bachstrasse_button = document.getElementById("bachstrasse");
+		const suhr_button = document.getElementById("suhr");
+
+		google.maps.event.addDomListener(atelier_button, 'click', (e) => {
+			e.preventDefault();
+			zoomLocation(atelier_location);
+		});
+
+		google.maps.event.addDomListener(bachstrasse_button, 'click', (e) => {
+			e.preventDefault();
+			zoomLocation(bachstrasse_location);
+		});
+
+		google.maps.event.addDomListener(suhr_button, 'click', (e) => {
+			e.preventDefault();
+			zoomLocation(suhr_location);
+		});
+	}
+
+	function addMarker(location) {
+		const marker = new google.maps.Marker({
+			position: location,
+			map,
+		});
+		markers.push(marker);
+	}
+
+	function zoomLocation(location) {
+		map.panTo(location);
+		map.setZoom(16);
+	}
+</script>
 <?php wp_footer(); ?>
-
 </body>
 </html>

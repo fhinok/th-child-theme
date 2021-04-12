@@ -968,6 +968,21 @@ select.orderby {
           box-shadow: 0 27px 25px -2px rgba(0, 0, 0, 0.3);
 }
 
+.contact_map {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+#map {
+  height: 350px;
+  width: 100%;
+}
+
+#contact_form {
+  display: none;
+}
+
 @media only screen and (min-width: 992px) {
   #Top_bar.is-sticky {
     z-index: 9999;
