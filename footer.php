@@ -182,15 +182,27 @@ if ($back_to_top_class == 'hide') {
 		const atelier_location = { lat: 47.39060611657107, lng: 8.053645363362653 };
 		const bachstrasse_location = { lat: 47.38636673097061, lng: 8.057152546717441 };
 		const suhr_location = { lat: 47.3671549277468, lng: 8.08368075893751 };
+
+		let info = (titel, angebot) => {
+			var text = `
+			<div id="content">
+				<h1 id="firstHeading" class="firstHeading">${ titel }</h1>
+				<div id="bodyContent">
+					<p>Hier können Sie ${ angebot } abholen</p>
+				</div>
+			</div>`
+			return text;
+		}
+
 		map = new google.maps.Map(document.getElementById('map'), {
 			center: center_location,
 			zoom: 13,
 			disableDefaultUI: true,
 		})
 
-		addMarker(atelier_location);
-		addMarker(bachstrasse_location);
-		addMarker(suhr_location);
+		const marker_atelier = addMarker(atelier_location);
+		const marker_bachstrasse = addMarker(bachstrasse_location);
+		const marker_suhr = addMarker(suhr_location);
 
 		const atelier_button = document.getElementById("atelier");
 		const bachstrasse_button = document.getElementById("bachstrasse");
@@ -199,16 +211,68 @@ if ($back_to_top_class == 'hide') {
 		google.maps.event.addDomListener(atelier_button, 'click', (e) => {
 			e.preventDefault();
 			zoomLocation(atelier_location);
+			info_atelier.open(map, marker_atelier);
+			// remove moouseover events
+		});
+
+		google.maps.event.addDomListener(atelier_button, 'mouseover', (e) => {
+			info_bachstrasse.close();
+			info_suhr.close();
+			info_atelier.open(map, marker_atelier);
 		});
 
 		google.maps.event.addDomListener(bachstrasse_button, 'click', (e) => {
 			e.preventDefault();
 			zoomLocation(bachstrasse_location);
+			info_bachstrasse.open(map, marker_bachstrasse);
+		});
+
+		google.maps.event.addDomListener(bachstrasse_button, 'mouseover', (e) => {
+			info_atelier.close();
+			info_suhr.close();
+			info_bachstrasse.open(map, marker_bachstrasse);
 		});
 
 		google.maps.event.addDomListener(suhr_button, 'click', (e) => {
 			e.preventDefault();
 			zoomLocation(suhr_location);
+			info_suhr.open(map, marker_suhr);
+		});
+
+		google.maps.event.addDomListener(suhr_button, 'mouseover', (e) => {
+			info_atelier.close();
+			info_bachstrasse.close();
+			info_suhr.open(map, marker_suhr);
+		});
+
+		const info_atelier = new google.maps.InfoWindow({
+			content: info('Tagesstätte', 'Karten und pataBee'),
+		});
+
+		const info_bachstrasse = new google.maps.InfoWindow({
+			content: info('Bachstrasse', 'Frischprodukte'),
+		});
+
+		const info_suhr = new google.maps.InfoWindow({
+			content: info('Suhr (ab Sommer 2021)', 'Teigwaren und Backwaren'),
+		});
+
+		marker_atelier.addListener('click', () => {
+			info_bachstrasse.close();
+			info_suhr.close();
+			info_atelier.open(map, marker_atelier);
+		});
+
+		marker_bachstrasse.addListener('click', () => {
+			info_atelier.close();
+			info_suhr.close();
+			info_bachstrasse.open(map, marker_bachstrasse);
+		});
+
+		marker_suhr.addListener('click', () => {
+			info_atelier.close();
+			info_bachstrasse.close();
+			info_suhr.open(map, marker_suhr);
 		});
 	}
 
@@ -217,13 +281,18 @@ if ($back_to_top_class == 'hide') {
 			position: location,
 			map,
 		});
-		markers.push(marker);
+		return marker;
 	}
 
 	function zoomLocation(location) {
+		var el = document.querySelector( '.contact_map-toggle' );
+		var text = document.querySelector( '.contact_map-toggle > h4' );
+		el.classList.add('open');
+		text.innerHTML = 'Kontakt';
 		map.panTo(location);
 		map.setZoom(16);
 	}
+
 </script>
 <?php wp_footer(); ?>
 </body>

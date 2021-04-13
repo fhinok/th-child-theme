@@ -48,5 +48,12 @@ jQuery(function ($) {
             });
             $(this).html(text);
         });
-    } )
+    });
+
+    $(document).ready( function() {
+		$('.contact_map-toggle').on('click', function() {
+            $(".contact_map-toggle > h4").toggleText("Karte", "Kontakt");
+			$(this).toggleClass('open');
+		});
+	});
 });

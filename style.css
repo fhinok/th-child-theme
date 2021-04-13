@@ -972,15 +972,62 @@ select.orderby {
   display: block;
   height: 100%;
   width: 100%;
+  position: relative;
+}
+
+.contact_map-toggle {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -55px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  width: 245px;
+  cursor: pointer;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transform: rotate(-90deg) translateX(-100%);
+          transform: rotate(-90deg) translateX(-100%);
+  background-color: #555555;
+}
+
+.contact_map-toggle h4 {
+  margin: 0;
+}
+
+.contact_map-toggle.open ~ #contact_form {
+  opacity: 0;
+  width: 5%;
 }
 
 #map {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 350px;
   width: 100%;
 }
 
+#map h1#firstHeading.firstHeading {
+  font-size: 14pt;
+  color: black;
+}
+
+#map #content {
+  color: black;
+}
+
 #contact_form {
-  display: none;
+  opacity: 1;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 350px;
+  width: 100%;
+  background-color: #252525;
 }
 
 @media only screen and (min-width: 992px) {

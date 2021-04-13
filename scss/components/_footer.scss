@@ -145,13 +145,64 @@
     display: block;
     height: 100%;
     width: 100%;
+    position: relative;
+
+    &-toggle {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -55px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        width: 245px;
+        cursor: pointer;
+        transform-origin: top left;
+        transform: rotate(-90deg) translateX(-100%);
+        background-color: rgb(85, 85, 85);
+
+        h4 {
+            margin: 0;
+        }
+
+        &:hover {
+
+        }
+
+        &.open {
+           & ~ #contact_form {
+               opacity: 0;
+               width: 5%;
+           }
+        }
+    }
 }
 
 #map {
+    position: absolute;
+    top: 0;
+    left:  0;
     height: 350px;
     width: 100%;
+
+    h1#firstHeading.firstHeading {
+        font-size: 14pt;
+        color: rgb(0,0,0);
+    }
+
+    #content {
+        color: rgb(0,0,0)
+    }
 }
 
 #contact_form {
-    display: none;
+    opacity: 1;
+    transition: all .4s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 350px;
+    width: 100%;
+    background-color: rgb(37, 37, 37);
+    // display: none;
 }
