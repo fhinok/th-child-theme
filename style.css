@@ -999,10 +999,29 @@ select.orderby {
   display: block;
   position: absolute;
   top: 0;
-  left: -40px;
+  left: 0;
   padding: 10px 15px 10px 10px;
   cursor: pointer;
   background-color: #555555;
+}
+
+.contact_map-toggle .hidden-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .contact_map-toggle {
+    padding: 10px 10px;
+    top: -50px;
+    left: 0;
+    text-decoration: none;
+  }
+  .contact_map-toggle > :first-child {
+    margin-right: 10px;
+  }
+  .contact_map-toggle .hidden-mobile {
+    display: inline;
+  }
 }
 
 .contact_map-toggle.open ~ #contact_form {

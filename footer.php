@@ -269,7 +269,7 @@ if ($back_to_top_class == 'hide') {
 	function zoomLocation(location) {
 		var el = document.querySelector( '.contact_map-toggle' );
 		el.classList.add('open');
-		el.innerHTML = '<span class="dashicons dashicons-email"></span>';
+		el.innerHTML = '<span class="dashicons dashicons-email"></span><span class="hidden-mobile">Kontakt anzeigen</span>';
 		map.panTo(location);
 		map.setZoom(16);
 	}

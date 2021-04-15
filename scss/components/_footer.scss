@@ -155,10 +155,29 @@
         display: block;
         position: absolute;
         top: 0;
-        left: -40px;
+        left: 0;
         padding: 10px 15px 10px 10px;
         cursor: pointer;
         background-color: rgb(85, 85, 85);
+
+        .hidden-mobile {
+            display: none;
+        }
+
+        @media only screen and (max-width: 768px) {
+            padding: 10px 10px;
+            top: -50px;
+            left: 0;
+            text-decoration: none;
+
+            & > :first-child {
+                margin-right: 10px;
+            }
+
+            .hidden-mobile {
+                display: inline;
+            }
+        }
 
         &.open {
            & ~ #contact_form {

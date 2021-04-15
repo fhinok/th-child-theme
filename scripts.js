@@ -55,7 +55,9 @@ jQuery(function ($) {
 
     $(document).ready( function() {
 		$('.contact_map-toggle').on('click', function() {
-            $(this).toggleHTML('<span class="dashicons dashicons-location"></span>', '<span class="dashicons dashicons-email"></span>');
+            var htmlMap = '<span class="dashicons dashicons-location"></span><span class="hidden-mobile">Karte anzeigen</span>';
+            var htmlContact = '<span class="dashicons dashicons-email"></span><span class="hidden-mobile">Kontakt anzeigen</span>';
+            $(this).toggleHTML(htmlMap, htmlContact);
 			$(this).toggleClass('open');
 		});
 	});
