@@ -215,33 +215,15 @@ if ($back_to_top_class == 'hide') {
 			// remove moouseover events
 		});
 
-		google.maps.event.addDomListener(atelier_button, 'mouseover', (e) => {
-			info_bachstrasse.close();
-			info_suhr.close();
-			info_atelier.open(map, marker_atelier);
-		});
-
 		google.maps.event.addDomListener(bachstrasse_button, 'click', (e) => {
 			e.preventDefault();
 			zoomLocation(bachstrasse_location);
 			info_bachstrasse.open(map, marker_bachstrasse);
 		});
 
-		google.maps.event.addDomListener(bachstrasse_button, 'mouseover', (e) => {
-			info_atelier.close();
-			info_suhr.close();
-			info_bachstrasse.open(map, marker_bachstrasse);
-		});
-
 		google.maps.event.addDomListener(suhr_button, 'click', (e) => {
 			e.preventDefault();
 			zoomLocation(suhr_location);
-			info_suhr.open(map, marker_suhr);
-		});
-
-		google.maps.event.addDomListener(suhr_button, 'mouseover', (e) => {
-			info_atelier.close();
-			info_bachstrasse.close();
 			info_suhr.open(map, marker_suhr);
 		});
 
@@ -286,9 +268,8 @@ if ($back_to_top_class == 'hide') {
 
 	function zoomLocation(location) {
 		var el = document.querySelector( '.contact_map-toggle' );
-		var text = document.querySelector( '.contact_map-toggle > h4' );
 		el.classList.add('open');
-		text.innerHTML = 'Kontakt';
+		el.innerHTML = '<span class="dashicons dashicons-email"></span>';
 		map.panTo(location);
 		map.setZoom(16);
 	}

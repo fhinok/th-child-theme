@@ -2,6 +2,9 @@ jQuery(function ($) {
     $.fn.extend({
         toggleText: function(a, b){
             return this.text(this.text() == b ? a : b);
+        },
+        toggleHTML: function(a, b){
+            return this.html(this.html() == b ? a : b);
         }
     });
 
@@ -52,7 +55,7 @@ jQuery(function ($) {
 
     $(document).ready( function() {
 		$('.contact_map-toggle').on('click', function() {
-            $(".contact_map-toggle > h4").toggleText("Karte", "Kontakt");
+            $(this).toggleHTML('<span class="dashicons dashicons-location"></span>', '<span class="dashicons dashicons-email"></span>');
 			$(this).toggleClass('open');
 		});
 	});

@@ -803,6 +803,10 @@ select.orderby {
   background-color: #252525;
 }
 
+#Footer .column.two-third {
+  min-height: 500px;
+}
+
 #Footer .widget h4 {
   color: #777;
 }
@@ -962,7 +966,7 @@ select.orderby {
 }
 
 #contact textarea {
-  height: 99%;
+  height: 100%;
 }
 
 #contact input[type="submit"] {
@@ -995,21 +999,10 @@ select.orderby {
   display: block;
   position: absolute;
   top: 0;
-  left: -55px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  width: 245px;
+  left: -40px;
+  padding: 10px 15px 10px 10px;
   cursor: pointer;
-  -webkit-transform-origin: top left;
-          transform-origin: top left;
-  -webkit-transform: rotate(-90deg) translateX(-100%);
-          transform: rotate(-90deg) translateX(-100%);
   background-color: #555555;
-}
-
-.contact_map-toggle h4 {
-  margin: 0;
 }
 
 .contact_map-toggle.open ~ #contact_form {
