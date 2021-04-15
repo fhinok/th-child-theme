@@ -1,4 +1,9 @@
 @charset "UTF-8";
+/*
+Theme Name: Töpferhaus
+Template: betheme
+Version: 1.6.2
+*/
 /* blurred images fix */
 img {
   -webkit-backface-visibility: hidden;
