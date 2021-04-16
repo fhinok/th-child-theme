@@ -220,6 +220,30 @@ function th_noscript() {
 
 add_filter( 'wpcf7_autop_or_not', '__return_false' );
 
+$is_karten = false;
+
+add_filter( 'pre_get_posts', 'checkForCards' );
+function checkForCards($terms) {
+	global $is_karten;
+	$query_vars = $terms->query_vars;
+	if ($query_vars['pagename'] == "karten") {
+		$is_karten = true;
+	}
+}
+
+add_filter( 'woocommerce_get_image_size_thumbnail', 'th_change_thumbnail' );
+function th_change_thumbnail($args) {
+	global $is_karten;
+	if( $is_karten ) {
+		$args = [
+			'width' => 900,
+			'height' => 1280,
+			'crop' => 1
+		];
+	}
+	return $args;
+}
+
 // Seitenauswahl vor und nach Produkten
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );

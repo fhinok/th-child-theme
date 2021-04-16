@@ -1062,6 +1062,16 @@ select.orderby {
   background-color: #252525;
 }
 
+.product_cat-karten .image_frame .image_wrapper img:not(.ls-l) {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.product_cat-karten .image_frame:hover .image_wrapper img {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
 @media only screen and (min-width: 992px) {
   #Top_bar.is-sticky {
     z-index: 9999;

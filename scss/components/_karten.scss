@@ -1,0 +1,16 @@
+.product_cat-karten {
+    .image_frame {
+        .image_wrapper {
+    
+            img:not(.ls-l) {
+                transform: scale(.9);
+                    
+            }
+    
+        }
+        
+        &:hover .image_wrapper img {
+            transform: scale(.95);
+        }
+    }
+}
