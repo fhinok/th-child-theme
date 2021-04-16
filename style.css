@@ -296,6 +296,10 @@ div.vc_column-inner.vc_custom_1614696527171 {
   text-decoration: none;
 }
 
+.bio_logo {
+  width: 4rem;
+}
+
 .search_single .query_box_direct_value, .instance_search_input {
   padding: 6px 10px 6px 10px;
   border: 2px solid black;
