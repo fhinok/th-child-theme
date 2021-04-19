@@ -300,6 +300,13 @@ div.vc_column-inner.vc_custom_1614696527171 {
   width: 4rem;
 }
 
+@media only screen and (max-width: 768px) {
+  .vc_column_container > .vc_column-inner {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
 .search_single .query_box_direct_value, .instance_search_input {
   padding: 6px 10px 6px 10px;
   border: 2px solid black;
@@ -443,6 +450,10 @@ input[type="search"].aws-search-field::placeholder {
   }
 }
 
+.column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item {
+  margin-right: 0;
+}
+
 .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item a {
   font-size: 13pt;
   text-align: center;
@@ -485,6 +496,14 @@ input[type="search"].aws-search-field::placeholder {
   background-repeat: no-repeat;
 }
 
+@media only screen and (max-width: 768px) {
+  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-56 {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+
 .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-26 a::before {
   content: '';
   background-image: url("https://shopdemo.web-stat.ch/wp-content/uploads/2021/03/TH-Backwaren.svg");
@@ -494,6 +513,14 @@ input[type="search"].aws-search-field::placeholder {
   margin-bottom: 1rem;
   display: block;
   background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 768px) {
+  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-26 {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
 }
 
 .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-66 a::before {
@@ -507,6 +534,14 @@ input[type="search"].aws-search-field::placeholder {
   background-repeat: no-repeat;
 }
 
+@media only screen and (max-width: 768px) {
+  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-66 {
+    -webkit-box-ordinal-group: 7;
+        -ms-flex-order: 6;
+            order: 6;
+  }
+}
+
 .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-33 a::before {
   content: '';
   background-image: url("https://shopdemo.web-stat.ch/wp-content/uploads/2021/04/TH-Goldstück.svg");
@@ -516,6 +551,14 @@ input[type="search"].aws-search-field::placeholder {
   margin-bottom: 1rem;
   display: block;
   background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 768px) {
+  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-33 {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
 }
 
 .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-46 a::before {
@@ -529,6 +572,14 @@ input[type="search"].aws-search-field::placeholder {
   background-repeat: no-repeat;
 }
 
+@media only screen and (max-width: 768px) {
+  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-46 {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+}
+
 .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-20 a::before {
   content: '';
   background-image: url("https://shopdemo.web-stat.ch/wp-content/uploads/2021/03/TH-Pasta.svg");
@@ -540,6 +591,14 @@ input[type="search"].aws-search-field::placeholder {
   background-repeat: no-repeat;
 }
 
+@media only screen and (max-width: 768px) {
+  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-20 {
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+  }
+}
+
 .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-261 a::before {
   content: '';
   background-image: url("https://shopdemo.web-stat.ch/wp-content/uploads/2021/04/patabee_placeholder.svg");
@@ -549,6 +608,14 @@ input[type="search"].aws-search-field::placeholder {
   margin-bottom: .8rem;
   display: block;
   background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 768px) {
+  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-261 {
+    -webkit-box-ordinal-group: 8;
+        -ms-flex-order: 7;
+            order: 7;
+  }
 }
 
 .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-15 {
@@ -567,7 +634,6 @@ input[type="search"].aws-search-field::placeholder {
 
 @media only screen and (max-width: 768px) {
   .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item {
-    margin-right: .4rem;
     margin-bottom: .9rem;
     width: 23%;
     -ms-flex-item-align: baseline;
