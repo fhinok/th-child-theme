@@ -144,6 +144,12 @@ if( isb2b() ){
 			'label'	=> 'Gebinde zurücknehmen?',
 		), $fields->get_value( 'boxes' ) );
 
+		woocommerce_form_field( 'shipping_date', array(
+			'type'	=> 'date',
+			'class'	=> array('form-row-wide'),
+			'label'	=> 'Gewünschtes Lieferdatum',
+		), $fields->get_value( 'shipping_date' ) );
+
 	}
 
 	add_action( 'woocommerce_checkout_update_order_meta', 'th_save_custom_checkout_fields' );
@@ -156,6 +162,9 @@ if( isb2b() ){
 
 		if( !empty( $_POST['shipping_notes'] ) )
 			update_post_meta( $order_id, 'shipping_notes', $_POST['shipping_notes'] );
+
+		if( !empty( $_POST['shipping_date'] ) )
+			update_post_meta( $order_id, 'shipping_date', $_POST['shipping_date'] );
 	}
 
 	add_filter( 'woocommerce_checkout_fields', 'th_change_shipping_notes', 50 );
