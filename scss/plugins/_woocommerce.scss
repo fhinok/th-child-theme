@@ -192,8 +192,25 @@ div.vc_column-inner.vc_custom_1614696527171 {
     text-decoration: none;
 }
 
-.bio_logo {
-    width: 4rem;
+
+.zertifizierungen {
+    display: flex;
+    align-items: center;
+    
+    .bio_logo {
+        height: 4rem;
+        margin-right: 1.7rem;
+        img {
+            max-height: 100%;
+        }
+    }
+    
+    .urdinkel_logo {
+        height: 3rem;
+        img {
+            max-height: 100%;
+        }
+    }
 }
 
 @media only screen and (max-width: 768px) {
