@@ -135,6 +135,7 @@ if( !isb2b() ) {
 ####### B2B #######
 if( isb2b() ){
 
+	// TH Felder bei Checkout
 	add_filter( 'woocommerce_after_order_notes', 'th_custom_checkout_fields' );
 	function th_custom_checkout_fields( $fields ) {
 		woocommerce_form_field( 'boxes', array(
@@ -151,6 +152,7 @@ if( isb2b() ){
 
 	}
 
+	// TH Felder speichern
 	add_action( 'woocommerce_checkout_update_order_meta', 'th_save_custom_checkout_fields' );
 	function th_save_custom_checkout_fields( $order_id ) {
 		$customer_number = get_the_author_meta('customer_number', wp_get_current_user()->ID );
@@ -172,6 +174,7 @@ if( isb2b() ){
 		return $fields;
 	}
 
+	// TH Kontakt im Profil anzeigen
 	add_action('woocommerce_account_dashboard', 'th_show_crm_contact');
 
 	function th_show_crm_contact( ) {
@@ -228,6 +231,7 @@ function th_noscript() {
 
 add_filter( 'wpcf7_autop_or_not', '__return_false' );
 
+// Thumbnails der Karten ändern
 $is_karten = false;
 
 add_filter( 'pre_get_posts', 'checkForCards' );
@@ -250,6 +254,28 @@ function th_change_thumbnail($args) {
 		];
 	}
 	return $args;
+}
+
+// Versandoptionen handling
+add_filter( 'woocommerce_package_rates', 'th_shippings' );
+function th_shippings( $shipping_methods ) {
+	$remove_methods = get_option( 'hide_shipping_methods' );
+
+	foreach( $shipping_methods as $shipping_methode_key => $shipping_methode ) {
+		$shipping_id = $shipping_methode->get_id();
+
+		if(isb2b()) {
+			if(in_array($shipping_id, $remove_methods) ) {
+				unset( $shipping_methods[$shipping_methode_key] );
+			}
+		} else {
+			if(!in_array($shipping_id, $remove_methods) ) {
+				unset( $shipping_methods[$shipping_methode_key] );
+			}
+		}
+	}
+
+	return $shipping_methods;
 }
 
 // Seitenauswahl vor und nach Produkten
