@@ -125,6 +125,13 @@ function th_custom_wc_sorting_args( $args ){
 // Remove the category count for WooCommerce categories
 add_filter( 'woocommerce_subcategory_count_html', '__return_null' );
 
+if( !isb2b() ) {
+	add_action( 'woocommerce_checkout_update_order_meta', 'th_save_custom_checkout_fields_notb2b' );
+	function th_save_custom_checkout_fields_notb2b( $order_id ) {
+		$customer_number = '530';
+		update_post_meta($order_id, 'th-customer-number', $customer_number);
+	}
+}
 ####### B2B #######
 if( isb2b() ){
 
@@ -147,6 +154,9 @@ if( isb2b() ){
 	add_action( 'woocommerce_checkout_update_order_meta', 'th_save_custom_checkout_fields' );
 	function th_save_custom_checkout_fields( $order_id ) {
 		$customer_number = get_the_author_meta('customer_number', wp_get_current_user()->ID );
+		if( empty( $customer_number ) ) {
+			$customer_number = '530';
+		}
 		update_post_meta($order_id, 'th-customer-number', $customer_number);
 
 		if( !empty( $_POST['boxes'] ) && $_POST['boxes'] == 1 )
