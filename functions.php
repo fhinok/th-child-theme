@@ -130,14 +130,6 @@ if( isb2b() ){
 
 	add_filter( 'woocommerce_after_order_notes', 'th_custom_checkout_fields' );
 	function th_custom_checkout_fields( $fields ) {
-		$custom_shipping_note = get_the_author_meta('customer_shipping_desc', wp_get_current_user()->ID );		
-
-		woocommerce_form_field( 'shipping_notes', array(
-			'type' => 'text',
-			'class' => array('form-row-wide'),
-			'label' => 'Anmerkungen zum Versand',
-		),  $custom_shipping_note );
-
 		woocommerce_form_field( 'boxes', array(
 			'type'	=> 'checkbox',
 			'class'	=> array('form-row-wide'),
@@ -159,9 +151,6 @@ if( isb2b() ){
 
 		if( !empty( $_POST['boxes'] ) && $_POST['boxes'] == 1 )
 			update_post_meta( $order_id, 'boxes', 1 );
-
-		if( !empty( $_POST['shipping_notes'] ) )
-			update_post_meta( $order_id, 'shipping_notes', $_POST['shipping_notes'] );
 
 		if( !empty( $_POST['shipping_date'] ) )
 			update_post_meta( $order_id, 'shipping_date', $_POST['shipping_date'] );

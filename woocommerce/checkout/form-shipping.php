@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 
 		<h3 id="ship-to-different-address">
 			<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">
-				<input id="ship-to-different-address-checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" <?php checked( apply_filters( 'woocommerce_ship_to_different_address_checked', 'shipping' === get_option( 'woocommerce_ship_to_destination' ) ? 1 : 0 ), 1 ); ?> type="checkbox" name="ship_to_different_address" value="1" /> <span><?php esc_html_e( 'Ship to a different address?', 'woocommerce' ); ?></span>
+				<input id="ship-to-different-address-checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" <?php checked( apply_filters( 'woocommerce_ship_to_different_address_checked', 'shipping' === get_option( 'woocommerce_ship_to_destination' ) ? 1 : 0 ), 0 ); ?> type="checkbox" name="ship_to_different_address" value="1" /> <span><?php esc_html_e( 'Ship to a different address?', 'woocommerce' ); ?></span>
 			</label>
 		</h3>
 
@@ -67,7 +67,13 @@ defined( 'ABSPATH' ) || exit;
 
 		<div class="woocommerce-additional-fields__field-wrapper">
 			<?php foreach ( $checkout->get_checkout_fields( 'order' ) as $key => $field ) : ?>
-				<?php woocommerce_form_field( $key, $field, $checkout->get_value( $key ) ); ?>
+				<?php 
+					if( strtolower($field['label']) === 'bestellhinweise' ) {
+						$custom_shipping_note = get_the_author_meta('customer_shipping_desc', wp_get_current_user()->ID );
+						woocommerce_form_field( $key, $field, $custom_shipping_note );
+						continue;
+					}
+					woocommerce_form_field( $key, $field, $checkout->get_value( $key ) ); ?>
 			<?php endforeach; ?>
 		</div>
 
