@@ -260,6 +260,7 @@ function th_change_thumbnail($args) {
 add_filter( 'woocommerce_package_rates', 'th_shippings' );
 function th_shippings( $shipping_methods ) {
 	$remove_methods = get_option( 'hide_shipping_methods' );
+	$remove_methods_guest = get_option( 'hide_shipping_methods_guest' );
 
 	foreach( $shipping_methods as $shipping_methode_key => $shipping_methode ) {
 		$shipping_id = $shipping_methode->get_id();
@@ -269,7 +270,7 @@ function th_shippings( $shipping_methods ) {
 				unset( $shipping_methods[$shipping_methode_key] );
 			}
 		} else {
-			if(!in_array($shipping_id, $remove_methods) ) {
+			if(in_array($shipping_id, $remove_methods_guest) ) {
 				unset( $shipping_methods[$shipping_methode_key] );
 			}
 		}
