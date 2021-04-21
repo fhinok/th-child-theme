@@ -264,6 +264,7 @@ function th_shippings( $shipping_methods ) {
 		$remove_methods = get_option( 'hide_shipping_methods' );
 		$remove_methods_guest = get_option( 'hide_shipping_methods_guest' );
 		$customer_shipping = get_the_author_meta('customer_shipping', wp_get_current_user()->ID);
+		$remove_methods_guest[] = 'wcsdm:78'; // Hide Lieferung durch Töpferhaus nach Distanz für normale Kunden
 
 		switch ($customer_shipping) {
 			case 0:
