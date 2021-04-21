@@ -304,6 +304,18 @@ function th_shippings( $shipping_methods ) {
 	return $shipping_methods;
 }
 
+// Menü anhand von Status
+	add_filter( 'wp_nav_menu_args', 'th_nav_menu_args' );
+	function th_nav_menu_args( $args = '' ) {
+		if( is_user_logged_in() ) { 
+			$args['menu'] = 'logged-in';
+		} else { 
+			$args['menu'] = 'logged-out';
+		} 
+		return $args;
+	}
+
+	
 // Seitenauswahl vor und nach Produkten
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
