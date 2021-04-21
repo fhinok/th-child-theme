@@ -29,6 +29,10 @@ table th, table td {
   vertical-align: top;
 }
 
+.has_content .the_content_wrapper {
+  margin-bottom: 120px;
+}
+
 #Footer .widget p {
   font-size: 16px;
   font-weight: 300;
