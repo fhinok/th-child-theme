@@ -259,44 +259,47 @@ function th_change_thumbnail($args) {
 // Versandoptionen handling
 add_filter( 'woocommerce_package_rates', 'th_shippings' );
 function th_shippings( $shipping_methods ) {
-	$remove_methods = get_option( 'hide_shipping_methods' );
-	$remove_methods_guest = get_option( 'hide_shipping_methods_guest' );
-	$customer_shipping = get_the_author_meta('customer_shipping', wp_get_current_user()->ID);
+	if( is_checkout() ){
 
-	switch ($customer_shipping) {
-		case 0:
-			$statement = '/ /';
-			break;
-		case 1:
-			$statement = '/lieferung/i';
-			break;
-		case 2:
-			$statement = '/abholung/i';
-			break;
-		case 3:
-			$statement = '/postversand/i';
-			break;
-	}
+		$remove_methods = get_option( 'hide_shipping_methods' );
+		$remove_methods_guest = get_option( 'hide_shipping_methods_guest' );
+		$customer_shipping = get_the_author_meta('customer_shipping', wp_get_current_user()->ID);
 
-	foreach( $shipping_methods as $shipping_methode_key => $shipping_methode ) {
-		$shipping_id = $shipping_methode->get_id();
-		
-		if(isb2b()) {
-			if(in_array($shipping_id, $remove_methods) ) {
-				unset( $shipping_methods[$shipping_methode_key] );
-			}
+		switch ($customer_shipping) {
+			case 0:
+				$statement = '/ /';
+				break;
+			case 1:
+				$statement = '/lieferung/i';
+				break;
+			case 2:
+				$statement = '/abholung/i';
+				break;
+			case 3:
+				$statement = '/postversand/i';
+				break;
+		}
 
-			if ( !preg_match($statement, $shipping_methode->label) ) {
-				unset( $shipping_methods[$shipping_methode_key] );
-			}
+		foreach( $shipping_methods as $shipping_methode_key => $shipping_methode ) {
+			$shipping_id = $shipping_methode->get_id();
+			
+			if(isb2b()) {
+				if(in_array($shipping_id, $remove_methods) ) {
+					unset( $shipping_methods[$shipping_methode_key] );
+				}
 
-		} else {
-			if(in_array($shipping_id, $remove_methods_guest) ) {
-				unset( $shipping_methods[$shipping_methode_key] );
+				if ( !preg_match($statement, $shipping_methode->label) ) {
+					unset( $shipping_methods[$shipping_methode_key] );
+				}
+
+			} else {
+				if(in_array($shipping_id, $remove_methods_guest) ) {
+					unset( $shipping_methods[$shipping_methode_key] );
+				}
 			}
 		}
-	}
 
+	}
 	return $shipping_methods;
 }
 
