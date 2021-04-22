@@ -309,6 +309,13 @@ function th_shippings( $shipping_methods ) {
 	function th_nav_menu_args( $args = '' ) {
 		if( is_user_logged_in() ) { 
 			$args['menu'] = 'logged-in';
+			
+			$user_categories = get_the_author_meta('can_buy_categories', get_current_user_id());
+			if( $user_categories ) {
+				if (in_array('karten', $user_categories)) {
+					$args['menu'] = "logged-in-card";
+				}
+			}
 		} else { 
 			$args['menu'] = 'logged-out';
 		} 
