@@ -266,6 +266,14 @@ function th_shippings( $shipping_methods ) {
 		$customer_shipping = get_the_author_meta('customer_shipping', wp_get_current_user()->ID);
 		$remove_methods_guest[] = 'wcsdm:78'; // Hide Lieferung durch Töpferhaus nach Distanz für normale Kunden
 
+		if( !$remove_methods ) {
+			$remove_methods = array();
+		}
+
+		if( !$remove_methods_guest ) {
+			$remove_methods_guest = array();
+		}
+
 		switch ($customer_shipping) {
 			case 0:
 				$statement = '/ /';
@@ -331,3 +339,53 @@ remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 3
 // füge abgeänderte Funktionen ein
 include_once('includes/wc-template-functions.php');
 include_once('includes/wc-account-functions.php');
+
+// Allow only pre-defined quantity from specific per category in the cart
+// add_filter( 'woocommerce_add_to_cart_validation', 'allowed_quantity_per_category_in_the_cart', 10, 2 );
+// function allowed_quantity_per_category_in_the_cart( $passed, $product_id) {
+// 	// wp_die();
+//     $running_qty = 0;
+//     $restricted_product_cats = $restricted_product_cat_slugs = array();
+// 	var_dump($restricted_product_cats);
+
+//     //Specify the category/categories by category slug and the quantity limit
+//     $restricted_product_cats[] = array('cat_slug'=> 'karten', 'max_num_products' => 15); // change here
+//     foreach($restricted_product_cats as $restricted_prod_cat) $restricted_product_cat_slugs[]= $restricted_prod_cat['cat_slug'];
+
+//     // Getting the current product category slugs in an array
+//     $product_cats_object = get_the_terms( $product_id, 'product_cat' );
+//     foreach($product_cats_object as $obj_prod_cat) $current_product_cats[]=$obj_prod_cat->slug;
+
+//     // Iterating through each cart item
+//     foreach (WC()->cart->get_cart() as $cart_item_key=>$cart_item ){
+
+//         // Check if restricted category/categories found
+//         if( array_intersect($restricted_product_cat_slugs, $current_product_cats) ) {
+
+//             foreach($restricted_product_cats as $restricted_product_cat){
+//                 if( in_array($restricted_product_cat['cat_slug'], $current_product_cats) && has_term( $current_product_cats, 'product_cat', $cart_item['product_id'] )) {
+
+//                     // count(selected category) quantity
+//                     $running_qty += (int) $cart_item['quantity'];
+// 					var_dump($cart_item['quantity']);
+
+//                     // Check if More than allowed products in the cart
+//                     if( $running_qty >= $restricted_product_cat['max_num_products'] ) {
+
+//                         //limit to maximum allowed
+//                         WC()->cart->set_quantity( $cart_item_key, $restricted_product_cat['max_num_products'] ); // Change quantity
+
+//                         // Get the category information
+//                         $catinfo = get_term_by('slug', $restricted_product_cat['cat_slug'], 'product_cat');
+
+//                         wc_add_notice( sprintf( 'Nur %s '.($restricted_product_cat['max_num_products']>1?'Produkte von dieser Kategorie ('.$catinfo->name.') sind':'Produkt von dieser Kategorie ist').' erlaubt.',  $restricted_product_cat['max_num_products'] ), 'error' );
+//                         $passed = false; // don't add the new product to the cart
+//                         // We stop the loop
+//                         break;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     return $passed;
+// }
