@@ -394,6 +394,15 @@ div.wpt_product_table_wrapper table.wpt_product_table tbody tr.wpt_row > td, .cu
   }
 }
 
+.datepicker-container {
+  top: 400px !important;
+}
+
+.sameday {
+  color: red;
+  margin-top: .2rem;
+}
+
 input[type="search"].aws-search-field {
   background-color: #1babe5 !important;
   border: none;

@@ -61,4 +61,45 @@ jQuery(function ($) {
 			$(this).toggleClass('open');
 		});
 	});
+
+    $(document).ready( function() {
+        var tomorrow = new Date();
+        var tomorrow_allowed = (date) => {
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            if (tomorrow.getDay() === 6) {
+                tomorrow.setDate(tomorrow.getDate() + 2);
+            }
+
+            if (tomorrow.getDay() === 0) {
+                tomorrow.setDate(tomorrow.getDate() + 1);
+            }
+
+            return tomorrow;
+        }
+
+        $('#shipping_date').datepicker({
+            inline: true,
+            language: 'de-DE',
+            format: 'dd.mm.YYYY',
+            date: tomorrow_allowed(tomorrow),
+            startDate: new Date(),
+            weekStart: 1,
+            autoPick: true,
+            filter: (date, view) => {
+                if(date.getDay() === 0 && view === 'day' || date.getDay() === 6 && view === 'day') {
+                    return false;
+                }
+            }
+        });
+
+        $('#shipping_date').on('pick.datepicker', function (e) {
+            var today = new Date();
+            today.setHours(0,0,0,0);
+            if (e.date.valueOf() === today.valueOf()) {
+                $('#shipping_date').closest('.form-row').append("<p class='sameday'>Für eine Lieferung heute kontaktieren Sie bitte das Töpferhaus!</p>");
+            } else {
+                $('.sameday').remove();
+            }
+          });
+    });
 });
