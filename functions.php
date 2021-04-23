@@ -264,7 +264,7 @@ function th_change_thumbnail($args) {
 // Versandoptionen handling
 add_filter( 'woocommerce_package_rates', 'th_shippings' );
 function th_shippings( $shipping_methods ) {
-	if( is_checkout() ){
+	if( is_checkout() || is_page( 'warenkorb' ) ){
 
 		$remove_methods = get_option( 'hide_shipping_methods' );
 		$remove_methods_guest = get_option( 'hide_shipping_methods_guest' );
