@@ -64,7 +64,7 @@ jQuery(function ($) {
 
     $(document).ready( function() {
         var tomorrow = new Date();
-        var tomorrow_allowed = (date) => {
+        var tomorrow_allowed = () => {
             tomorrow.setDate(tomorrow.getDate() + 1);
             if (tomorrow.getDay() === 6) {
                 tomorrow.setDate(tomorrow.getDate() + 2);
