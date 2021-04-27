@@ -264,6 +264,14 @@ table th, table td {
   padding: auto;
 }
 
+.woocommerce .shop_table.shop_table_responsive th, .woocommerce-page .shop_table.shop_table_responsive th {
+  text-align: right;
+}
+
+.woocommerce .shop_table.shop_table_responsive td, .woocommerce-page .shop_table.shop_table_responsive td {
+  text-align: left;
+}
+
 /* WooCO Totalpreis ausblenden */
 .wooco_total.wooco-total.wooco-text {
   display: none !important;

@@ -153,6 +153,15 @@
         padding: auto;
     }
 
+    .shop_table.shop_table_responsive {
+        th {
+            text-align: right;
+        }
+        td {
+            text-align: left;
+        }
+    }
+
 }
 
 /* WooCO Totalpreis ausblenden */
