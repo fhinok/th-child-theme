@@ -78,7 +78,7 @@ jQuery(function ($) {
         }
 
         $('#shipping_date').datepicker({
-            inline: true,
+            offset: -22,
             language: 'de-DE',
             format: 'dd.mm.YYYY',
             date: tomorrow_allowed(tomorrow),
