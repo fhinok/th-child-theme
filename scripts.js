@@ -43,10 +43,7 @@ jQuery(function ($) {
             var text = $(this).text();
             allergene.forEach(allergen => {
                 var regex = new RegExp('\\b(\\p{L}*)?(' + allergen + ')(\\p{L}+)?\\b', 'giu');
-                var match = text.match(regex);
-                if (match) match.forEach(value => {
-                    text = text.replace(value, '<strong class="allergen">' + value + '</strong>');
-                })
+                text = text.replace(regex, '<strong class="allergen">$1$2$3</strong>');
                 return text;
             });
             $(this).html(text);

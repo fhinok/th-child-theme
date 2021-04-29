@@ -38,6 +38,7 @@ allergene = [
     "eier",
     "eipulver",
     "eiprotein",
+    "Ei gekocht",
     "fisch",
     "schwefel",
     "sulfit",
