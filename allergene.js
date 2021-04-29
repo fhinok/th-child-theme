@@ -36,6 +36,8 @@ allergene = [
     "eigelb",
     "eiweiss",
     "eier",
+    "eipulver",
+    "eiprotein",
     "fisch",
     "schwefel",
     "sulfit",
@@ -44,5 +46,6 @@ allergene = [
     "muschel",
     "tintenfisch",
     "laktose",
-    "mayonnaise"
+    "mayonnaise",
+    "molke",
 ]
