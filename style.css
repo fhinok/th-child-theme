@@ -657,11 +657,7 @@ input[type="search"].aws-search-field::placeholder {
   }
 }
 
-.column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-15 {
-  display: none !important;
-}
-
-.column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-104 {
+.column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-15, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-104, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-277, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-264 {
   display: none !important;
 }
 
