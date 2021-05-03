@@ -1163,14 +1163,25 @@ select.orderby {
   background-color: #252525;
 }
 
+.product_cat-karten .image_frame .image_wrapper {
+  height: 250px;
+  width: 90%;
+  position: relative;
+}
+
 .product_cat-karten .image_frame .image_wrapper img:not(.ls-l) {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: scale(0.98) translate(-50%, -50%);
+          transform: scale(0.98) translate(-50%, -50%);
+  height: 100%;
+  max-height: 100%;
 }
 
 .product_cat-karten .image_frame:hover .image_wrapper img {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
+  -webkit-transform: scale(1) translate(-49%, -50%);
+          transform: scale(1) translate(-49%, -50%);
 }
 
 @media only screen and (min-width: 992px) {

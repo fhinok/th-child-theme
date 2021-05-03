@@ -1,16 +1,23 @@
 .product_cat-karten {
     .image_frame {
         .image_wrapper {
+            height: 250px;
+            width: 90%;
+            position: relative;
     
             img:not(.ls-l) {
-                transform: scale(.9);
-                    
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: scale(.98) translate(-50%, -50%);
+                height: 100%;
+                max-height: 100%;
             }
     
         }
         
         &:hover .image_wrapper img {
-            transform: scale(.95);
+            transform: scale(1) translate(-49%, -50%);
         }
     }
 }

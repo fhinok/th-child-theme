@@ -242,30 +242,22 @@ function th_noscript() {
 
 add_filter( 'wpcf7_autop_or_not', '__return_false' );
 
-// Thumbnails der Karten ändern
-$is_karten = false;
-
-add_filter( 'pre_get_posts', 'checkForCards' );
-function checkForCards($terms) {
-	global $is_karten;
-	$query_vars = $terms->query_vars;
-	if ($query_vars['pagename'] == "karten") {
-		$is_karten = true;
-	}
-}
-
 add_filter( 'woocommerce_get_image_size_thumbnail', 'th_change_thumbnail' );
 function th_change_thumbnail($args) {
-	global $is_karten;
-	if( $is_karten ) {
+	global $wp;
+	$current_slug = add_query_arg( array(), $wp->request );
+	if( $current_slug === "karten" ) {
 		$args = [
 			'width' => 900,
-			'height' => 1280,
-			'crop' => 1
+			'height' => '',
+			'crop' => 0
 		];
 	}
 	return $args;
 }
+
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+
 
 // Versandoptionen handling
 add_filter( 'woocommerce_package_rates', 'th_shippings' );
