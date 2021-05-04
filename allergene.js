@@ -49,4 +49,6 @@ allergene = [
     "laktose",
     "mayonnaise",
     "molke",
+    "schalenfrüchte",
+    "schalenfrucht"
 ]
