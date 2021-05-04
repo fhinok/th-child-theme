@@ -398,6 +398,10 @@ div.wpt_product_table_wrapper table.wpt_product_table tbody tr.wpt_row > td, .cu
   height: 32px;
 }
 
+.wpt_product_table_wrapper div.tables_cart_message_box a.cart-contents {
+  display: none;
+}
+
 .select2-container--default .select2-selection--single:not(:nth-child(2)), .select2-container--focus:not(:nth-child(2)), .select2-selection--multiple:not(:nth-child(2)) {
   border-radius: 0 !important;
   height: 32px;

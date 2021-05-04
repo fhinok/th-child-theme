@@ -56,3 +56,7 @@ div.wpt_product_table_wrapper table.wpt_product_table tbody tr.wpt_row>td, .cust
         height: 32px;
     }
 }
+
+.wpt_product_table_wrapper div.tables_cart_message_box a.cart-contents {
+    display: none;
+}
