@@ -1,5 +1,6 @@
 .search_single .query_box_direct_value,.instance_search_input{
     padding: 6px 10px 6px 10px;
+    width: 50%;
     border: 2px solid black;
 
     &:focus {
@@ -35,3 +36,23 @@ div.wpt_product_table_wrapper table.wpt_product_table tbody tr.wpt_row>td, .cust
     text-align: left;
 }
 
+.search_single.search_single_direct {
+    display: none;
+}
+
+.wpt_search_box {
+    .search_box_wrapper {
+        display: block;
+        width: 50%;
+        float: right;    
+    }
+} 
+
+.instance_search_wrapper {
+    position: relative;
+    top: -42px;
+
+    .instance_search_input {
+        height: 32px;
+    }
+}

@@ -343,6 +343,7 @@ div.vc_column-inner.vc_custom_1614696527171 {
 
 .search_single .query_box_direct_value, .instance_search_input {
   padding: 6px 10px 6px 10px;
+  width: 50%;
   border: 2px solid black;
 }
 
@@ -376,6 +377,25 @@ table.add_cart_only_icon tr .wpt_action a.button:before {
 
 div.wpt_product_table_wrapper table.wpt_product_table tbody tr.wpt_row > td, .custom_table thead .wpt_table_header_row th {
   text-align: left;
+}
+
+.search_single.search_single_direct {
+  display: none;
+}
+
+.wpt_search_box .search_box_wrapper {
+  display: block;
+  width: 50%;
+  float: right;
+}
+
+.instance_search_wrapper {
+  position: relative;
+  top: -42px;
+}
+
+.instance_search_wrapper .instance_search_input {
+  height: 32px;
 }
 
 .select2-container--default .select2-selection--single:not(:nth-child(2)), .select2-container--focus:not(:nth-child(2)), .select2-selection--multiple:not(:nth-child(2)) {
