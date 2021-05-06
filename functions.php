@@ -334,6 +334,25 @@ function th_shippings( $shipping_methods ) {
 		return $args;
 	}
 
+	// Bezahloptionen B2B
+	add_filter('woocommerce_available_payment_gateways','th_change_payment', 9999, 1 );
+	function th_change_payment( $allowed_gateways ) {
+		$allowed_gateways = array();
+		$all_gateways = WC()->payment_gateways->payment_gateways();
+		foreach( $all_gateways as $gateway) {
+			if( $gateway->enabled === 'yes' && !isb2b() ) {
+				if( $gateway->id === 'offline_gateway' ) { continue; }
+				$allowed_gateways[$gateway->id] = $gateway;
+			}
+		}
+
+		if( isb2b() ) {
+			$allowed_gateways['offline_gateway'] = $all_gateways['offline_gateway'];
+		}
+		
+		return $allowed_gateways;
+	}
+
 	
 // Seitenauswahl vor und nach Produkten
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
