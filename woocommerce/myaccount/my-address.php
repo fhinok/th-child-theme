@@ -45,6 +45,7 @@ $col    = 1;
 <p>
 	<?php echo apply_filters( 'woocommerce_my_account_my_address_description', esc_html__( 'The following addresses will be used on the checkout page by default.', 'woocommerce' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 	<?php 
+	// Show message to b2b customers
 	if( isb2b() ) {
 		echo '<p>Für eine Änderung der Adresse nehmen Sie bitte mit dem Töpferhaus Kontakt auf.</p>'; 
 	}
@@ -67,7 +68,9 @@ $col    = 1;
 		<header class="woocommerce-Address-title title">
 			<h3><?php echo esc_html( $address_title ); ?></h3>
 			<?php 
-			// Verhindere Stammkunden das bearbeiten der Adressen.
+			/**
+			 * prevent b2b customers from changing address
+			 */
 			if( !isb2b() ) : ?>
 			<a href="<?php echo esc_url( wc_get_endpoint_url( 'edit-address', $name ) ); ?>" class="edit"><?php echo $address ? esc_html__( 'Edit', 'woocommerce' ) : esc_html__( 'Add', 'woocommerce' ); ?></a>
 			<?php endif; ?>

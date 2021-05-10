@@ -34,11 +34,14 @@ defined( 'ABSPATH' ) || exit;
 			<div class="woocommerce-shipping-fields__field-wrapper">
 			<?php
 			$fields = $checkout->get_checkout_fields( 'shipping' );
-			// Verhindere, dass Stammkunden ihre Adresse ändern können.
+			/**
+			 * Prevent b2b users from changing address
+			 */
 			if( isb2b() ){
 				echo "Für eine Änderung der Adresse nehmen Sie bitte mit dem Töpferhaus Kontakt auf.<br>";
 			}
 
+			// render the input fields, but readonly for b2b customers
 			foreach ( $fields as $key => $field ) {
 				if( isb2b() ){
 					$field['custom_attributes'] = array( 'readonly' => true );

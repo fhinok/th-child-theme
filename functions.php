@@ -60,9 +60,13 @@ add_filter('body_class', function($classes) {
     return $classes;
 });
 
+
+/**
+ * enque all scripts and styles
+ */
 function th_theme_enqueue () {
-	wp_enqueue_script( 'allergene', get_stylesheet_directory_uri() . '/allergene.js', array( 'jquery', 'jquery-ui-core', 'jquery-effects-slide' ),'',true );
-	wp_enqueue_script( 'theme-js', get_stylesheet_directory_uri() . '/scripts.js', array( 'jquery', 'jquery-ui-core', 'jquery-effects-slide', 'allergene' ),'',true );
+	wp_enqueue_script( 'allergene', get_stylesheet_directory_uri() . '/js/allergene.js', array( 'jquery', 'jquery-ui-core', 'jquery-effects-slide' ),'',true );
+	wp_enqueue_script( 'theme-js', get_stylesheet_directory_uri() . '/js/scripts.js', array( 'jquery', 'jquery-ui-core', 'jquery-effects-slide', 'allergene' ),'',true );
 	wp_enqueue_script( 'datepicker-js', get_stylesheet_directory_uri() . '/plugins/datepicker.min.js', array( 'jquery' ),'',true );
 	wp_enqueue_script( 'datepicker-de', get_stylesheet_directory_uri() . '/plugins/datepicker.de-DE.js', array( 'jquery', 'datepicker-js' ),'',true );
 	wp_enqueue_style( 'datepicker-css', get_stylesheet_directory_uri() . '/plugins/datepicker.min.css');
@@ -74,18 +78,22 @@ add_action( 'wp_enqueue_scripts', 'th_theme_enqueue' );
 ######################### TÖPFERHAUS FUNKTIONEN #########################
 /**
  * Author: 	Samuel Will
- * Mail:	saemiwill@gmail.com
- * Link:	https://git.willsam.ch/fhinok/th-child-theme
+ * Mail:	mail@willsam.ch
+ * Link:	https://github.com/fhinok/th-child-theme
  */
 
+/**
+ * Split comma separated options to array
+ */
 function th_return_option( $name ) {
 	$option = preg_split( '/(\s*,*\s*)*,+(\s*,*\s*)*/', get_option( $name ));
 	return $option;
 }
 
-// Passt das Filtermenü an
+/**
+ * Add more filtering methods to woocommerce orderby select
+ */
 add_filter( 'woocommerce_catalog_orderby', 'th_rename_default_sorting_options' );
- 
 function th_rename_default_sorting_options( $options ){
 
 	unset( $options[ 'date' ] );
@@ -103,7 +111,9 @@ function th_rename_default_sorting_options( $options ){
 	return $options;
 }
 
-// Ermöglicht die Sortierung nach Titel oder Verfügbarkeit
+/**
+ * sort products loop by title or stock status
+ */
 add_filter( 'woocommerce_get_catalog_ordering_args', 'th_custom_wc_sorting_args' );
 function th_custom_wc_sorting_args( $args ){
 
@@ -125,9 +135,16 @@ function th_custom_wc_sorting_args( $args ){
 	return $args;
 }
 
-// Remove the category count for WooCommerce categories
+/**
+ * hide product counter for categories
+ */
 add_filter( 'woocommerce_subcategory_count_html', '__return_null' );
 
+/**
+ * if user is not b2b customer
+ * add customer number 530 to order meta.
+ * used for internal processsing in erp
+ */
 if( !isb2b() ) {
 	add_action( 'woocommerce_checkout_update_order_meta', 'th_save_custom_checkout_fields_notb2b' );
 	function th_save_custom_checkout_fields_notb2b( $order_id ) {
@@ -135,10 +152,13 @@ if( !isb2b() ) {
 		update_post_meta($order_id, 'th-customer-number', $customer_number);
 	}
 }
-####### B2B #######
+
+/**
+ * Add custom fields to checkout page if user is b2b customer
+ */
 if( isb2b() ){
 
-	// TH Felder bei Checkout
+	// Show fields on checkout page
 	add_filter( 'woocommerce_after_order_notes', 'th_custom_checkout_fields' );
 	function th_custom_checkout_fields( $fields ) {
 		woocommerce_form_field( 'boxes', array(
@@ -157,7 +177,7 @@ if( isb2b() ){
 
 	}
 
-	// TH Felder speichern
+	// save custom checkout fields
 	add_action( 'woocommerce_checkout_update_order_meta', 'th_save_custom_checkout_fields' );
 	function th_save_custom_checkout_fields( $order_id ) {
 		$customer_number = get_the_author_meta('customer_number', wp_get_current_user()->ID );
@@ -178,8 +198,12 @@ if( isb2b() ){
 		$fields['order']['order_comments']['placeholder'] = "Anmerkungen zu Ihrer Bestellung.";
 		return $fields;
 	}
+}
 
-	// TH Kontakt im Profil anzeigen
+/**
+ * show contact info on profile page for b2b customers
+ */
+if( isb2b() ) {
 	add_action('woocommerce_account_dashboard', 'th_show_crm_contact');
 
 	function th_show_crm_contact( ) {
@@ -198,8 +222,9 @@ if( isb2b() ){
 	}
 }
 
-##### END B2B #####
-
+/**
+ * check if logged in user has a b2b role set 
+ */
 function isb2b( ) {
 	$user = wp_get_current_user();
 	$roles = ( array ) $user->roles;
@@ -212,10 +237,14 @@ function isb2b( ) {
 	return false;
 }
 
-// Verstecke Meta auf Produktseite
+/**
+ * hide meta in loop
+ */
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
-// Verstecke Gewisse Kategorien auf den Shopseiten und in den Filtern
+/**
+ * hide given categories everywhere
+ */
 add_filter( 'get_terms', 'th_get_subcategory_terms', 10, 3 );
 function th_get_subcategory_terms( $terms, $taxonomies, $args ) {
 	$new_terms = array();
@@ -230,7 +259,9 @@ function th_get_subcategory_terms( $terms, $taxonomies, $args ) {
 	return $terms;
 }
 
-// Noscript Banner
+/**
+ * show noscript notification
+ */
 add_filter( 'wp_head', 'th_noscript', 20 );
 function th_noscript() {
 	?>
@@ -240,8 +271,14 @@ function th_noscript() {
 	<?php
 }
 
+/**
+ * remove <p> and <br> tags from contactform7
+ */
 add_filter( 'wpcf7_autop_or_not', '__return_false' );
 
+/**
+ * change thumbnail size in card product loop
+ */
 add_filter( 'woocommerce_get_image_size_thumbnail', 'th_change_thumbnail' );
 function th_change_thumbnail($args) {
 	global $wp;
@@ -259,25 +296,24 @@ function th_change_thumbnail($args) {
 remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
 
 
-// Versandoptionen handling
+/** 
+ * hide or show shipping methods based on customer role.
+ * if b2b customer has fixed shipping method
+ * remove all other ones
+ */
 add_filter( 'woocommerce_package_rates', 'th_shippings' );
 function th_shippings( $shipping_methods ) {
 	if( is_checkout() || is_page( 'warenkorb' ) ){
-
+		// get all settings
 		$remove_methods = get_option( 'hide_shipping_methods' );
 		$remove_methods_guest = get_option( 'hide_shipping_methods_guest' );
 		$customer_shipping = get_the_author_meta('customer_shipping', wp_get_current_user()->ID);
 
-		if( !$remove_methods ) {
-			$remove_methods = array();
-		}
-
-		if( !$remove_methods_guest ) {
-			$remove_methods_guest = array();
-		}
-
-		array_push($remove_methods_guest, 'wcsdm:78', 'wcsdm:66', 'wcsdm:69'); // Hide Lieferung durch Töpferhaus nach Distanz für normale Kunden
+		// Hide Lieferung durch Töpferhaus nach Distanz for not b2b users
+		if( !$remove_methods_guest ) { $remove_methods_guest = array(); } // create array if not existing
+		array_push($remove_methods_guest, 'wcsdm:78', 'wcsdm:66', 'wcsdm:69');
 		
+		// switch preg statement based on fixed shipping method
 		switch ($customer_shipping) {
 			case 0:
 				$statement = '/ /';
@@ -293,21 +329,25 @@ function th_shippings( $shipping_methods ) {
 				break;
 		}
 
-		foreach( $shipping_methods as $shipping_methode_key => $shipping_methode ) {
-			$shipping_id = $shipping_methode->get_id();
+		// get the ids of methods
+		foreach( $shipping_methods as $shipping_method_key => $shipping_method ) {
+			$shipping_id = $shipping_method->get_id();
 			
-			if(isb2b()) {
-				if(in_array($shipping_id, $remove_methods) ) {
-					unset( $shipping_methods[$shipping_methode_key] );
+			if( isb2b() ) {
+				// remove method from checkout, if shipping id is in array of methods to remove
+				if( $remove_methods && in_array($shipping_id, $remove_methods) ) {
+					unset( $shipping_methods[$shipping_method_key] );
 				}
 
-				if ( !preg_match($statement, $shipping_methode->label) ) {
-					unset( $shipping_methods[$shipping_methode_key] );
+				// remove all methods not matching fixed shipping method
+				if ( !preg_match($statement, $shipping_method->label) ) {
+					unset( $shipping_methods[$shipping_method_key] );
 				}
 
 			} else {
-				if(in_array($shipping_id, $remove_methods_guest) ) {
-					unset( $shipping_methods[$shipping_methode_key] );
+				// remove method from checkout, if shipping id is in array of methods to remove
+				if( $remove_methods_guest && in_array($shipping_id, $remove_methods_guest) ) {
+					unset( $shipping_methods[$shipping_method_key] );
 				}
 			}
 		}
@@ -316,49 +356,57 @@ function th_shippings( $shipping_methods ) {
 	return $shipping_methods;
 }
 
-// Menü anhand von Status
-	add_filter( 'wp_nav_menu_args', 'th_nav_menu_args' );
-	function th_nav_menu_args( $args = '' ) {
-		if( is_user_logged_in() ) { 
-			$args['menu'] = 'logged-in';
-			
-			$user_categories = get_the_author_meta('can_buy_categories', get_current_user_id());
-			if( $user_categories ) {
-				if (in_array('karten', $user_categories)) {
-					$args['menu'] = "logged-in-card";
-				}
-			}
-		} else { 
-			$args['menu'] = 'logged-out';
-		} 
-		return $args;
-	}
-
-	// Bezahloptionen B2B
-	add_filter('woocommerce_available_payment_gateways','th_change_payment', 9999, 1 );
-	function th_change_payment( $allowed_gateways ) {
-		$allowed_gateways = array();
-		$all_gateways = WC()->payment_gateways->payment_gateways();
-		foreach( $all_gateways as $gateway) {
-			if( $gateway->enabled === 'yes' && !isb2b() ) {
-				if( $gateway->id === 'offline_gateway' ) { continue; }
-				$allowed_gateways[$gateway->id] = $gateway;
-			}
-		}
-
-		if( isb2b() ) {
-			$allowed_gateways['offline_gateway'] = $all_gateways['offline_gateway'];
-		}
+/**
+ * different menues for different customers
+ */
+add_filter( 'wp_nav_menu_args', 'th_nav_menu_args' );
+function th_nav_menu_args( $args = '' ) {
+	if( is_user_logged_in() ) { 
+		$args['menu'] = 'logged-in';
 		
-		return $allowed_gateways;
+		$user_categories = get_the_author_meta('can_buy_categories', get_current_user_id());
+		if( $user_categories ) {
+			if (in_array('karten', $user_categories)) {
+				$args['menu'] = "logged-in-card";
+			}
+		}
+	} else { 
+		$args['menu'] = 'logged-out';
+	} 
+	return $args;
+}
+
+/**
+ * sort out payment gateways for b2b customers
+ */
+add_filter('woocommerce_available_payment_gateways','th_change_payment', 9999, 1 );
+function th_change_payment( $allowed_gateways ) {
+	$allowed_gateways = array();
+	$all_gateways = WC()->payment_gateways->payment_gateways();
+	foreach( $all_gateways as $gateway) {
+		if( $gateway->enabled === 'yes' && !isb2b() ) {
+			if( $gateway->id === 'offline_gateway' ) { continue; } // don't allow b2b gateway for other customers
+			$allowed_gateways[$gateway->id] = $gateway;
+		}
 	}
+
+	if( isb2b() ) {
+		$allowed_gateways['offline_gateway'] = $all_gateways['offline_gateway'];
+	}
+	
+	return $allowed_gateways;
+}
 
 	
-// Seitenauswahl vor und nach Produkten
+/**
+ * remove sorting (gets added in sidebar again)
+ * and the countig on top of the loop
+ */
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
-// add_action( 'woocommerce_before_shop_loop', 'woocommerce_pagination', 20 );
 
-// füge abgeänderte Funktionen ein
+/**
+ * include changed woocommerce functions
+ */
 include_once('includes/wc-template-functions.php');
 include_once('includes/wc-account-functions.php');
