@@ -1,4 +1,5 @@
 jQuery(function ($) {
+    // add functions to toggle text and html to jquery
     $.fn.extend({
         toggleText: function(a, b){
             return this.text(this.text() == b ? a : b);
@@ -8,6 +9,7 @@ jQuery(function ($) {
         }
     });
 
+    // Show/Hide filters on mobile
     $(document).ready( function() {
         $(".toggle_filters_button").on("click", () => {
             $("#th_filters").slideToggle(300);
@@ -15,7 +17,7 @@ jQuery(function ($) {
             $(".toggle_filters_icon").toggleClass("rotate");
         })
 
-        // Hack um Hauptkategoire auszublenden
+        // Hack to remove main categories from ajax filter
         function remove_cat_from_filter(cats) {
             var el = "";
             try {
@@ -38,6 +40,7 @@ jQuery(function ($) {
         });
     });
 
+    // automatically bold all allergenes in product attributes
     $(document).ready( function() {
         $('.woocommerce-product-attributes-item__value p').html( function() {
             var text = $(this).text();
@@ -50,6 +53,7 @@ jQuery(function ($) {
         });
     });
 
+    // function to toggle between map and contact form
     $(document).ready( function() {
 		$('.contact_map-toggle').on('click', function() {
             var htmlMap = '<span class="dashicons dashicons-location"></span><span class="hidden-mobile">Karte anzeigen</span>';
@@ -59,7 +63,10 @@ jQuery(function ($) {
 		});
 	});
 
+    // Datepicker on checkout settings
     $(document).ready( function() {
+
+        // check if next days are on weekend and set to monday
         var tomorrow = new Date();
         var tomorrow_allowed = () => {
             tomorrow.setDate(tomorrow.getDate() + 1);
@@ -74,6 +81,7 @@ jQuery(function ($) {
             return tomorrow;
         }
 
+        // init datepicker
         $('#shipping_date').datepicker({
             offset: -22,
             language: 'de-DE',
@@ -89,6 +97,7 @@ jQuery(function ($) {
             }
         });
 
+        // if customer picks today, show message
         $('#shipping_date').on('pick.datepicker', function (e) {
             var today = new Date();
             today.setHours(0,0,0,0);
