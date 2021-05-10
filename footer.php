@@ -169,8 +169,9 @@ if ($back_to_top_class == 'hide') {
 <?php endif; ?>
 
 <?php do_action('mfn_hook_bottom'); ?>
+<?php require('api_key.php'); ?>
 <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCipobJfajxCJblhNpQj9pS2ahW4P2pSaw&callback=initMap&libraries=&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=<?php echo $api_key; ?>&callback=initMap&libraries=&v=weekly"
       async
     ></script>
 
