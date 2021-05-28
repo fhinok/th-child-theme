@@ -54,5 +54,6 @@ allergene = [
     "mayonnaise",
     "molke",
     "schalenfrüchte",
-    "schalenfrucht"
+    "schalenfrucht",
+    "kaschukerne"
 ]
