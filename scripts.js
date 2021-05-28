@@ -45,7 +45,7 @@ jQuery(function ($) {
         $('.woocommerce-product-attributes-item__value p').html( function() {
             var text = $(this).text();
             allergene.forEach(allergen => {
-                var regex = new RegExp('(?!kakaobutter)\\b(\\p{L}*)?(' + allergen + ')(\\p{L}+)?\\b', 'giu');
+                var regex = new RegExp('\\b(?!kakaobutter)(\\p{L}*)?(' + allergen + ')(\\p{L}+)?\\b', 'giu');
                 text = text.replace(regex, '<strong class="allergen">$1$2$3</strong>');
                 return text;
             });
