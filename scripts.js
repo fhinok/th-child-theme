@@ -49,6 +49,9 @@ jQuery(function ($) {
                 text = text.replace(regex, '<strong class="allergen">$1$2$3</strong>');
                 return text;
             });
+
+            text = text.replace('Allergien', '<br><br>Allergien')
+            console.log(text);
             $(this).html(text);
         });
     });
