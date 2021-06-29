@@ -1,0 +1,22 @@
+{
+  "name": "th-child-theme",
+  "version": "1.0.0",
+  "description": "- add some b2b functionality   - readonly address fields   - show/hide shipping&payment methods)   - switch navigations - write all allergenes in bold font - remove some woocommerce parts - add more sorting methods in shop loop - other things",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass -w scss/style.scss ./style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fhinok/th-child-theme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fhinok/th-child-theme/issues"
+  },
+  "homepage": "https://github.com/fhinok/th-child-theme#readme",
+  "devDependencies": {
+    "node-sass": "^6.0.1"
+  }
+}
