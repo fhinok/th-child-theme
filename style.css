@@ -344,9 +344,10 @@ input[type="search"].aws-search-field {
 @media only screen and (min-width: 769px) {
   .column_sidebar_widget .widget_product_categories ul.product-categories {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    padding: 0; } }
+    flex-flow: row;
+    justify-content: center;
+    padding: 0;
+    align-items: baseline; } }
 
 .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item {
   margin-right: 0; }
@@ -368,91 +369,95 @@ input[type="search"].aws-search-field {
     @media only screen and (max-width: 768px) {
       .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item a {
         font-size: 10pt; } }
-  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-56 a::before {
-    content: '';
-    background-image: url("https://shop.toepferhaus.ch/wp-content/uploads/2021/03/TH-Bachfisch.svg");
-    width: 50px;
-    height: 50px;
-    margin: auto;
-    margin-bottom: 1rem;
-    display: block;
-    background-repeat: no-repeat; }
-  @media only screen and (max-width: 768px) {
-    .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-56 {
-      order: 1; } }
-  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-26 a::before {
-    content: '';
-    background-image: url("https://shop.toepferhaus.ch/wp-content/uploads/2021/03/TH-Backwaren.svg");
-    width: 50px;
-    height: 50px;
-    margin: auto;
-    margin-bottom: 1rem;
-    display: block;
-    background-repeat: no-repeat; }
-  @media only screen and (max-width: 768px) {
-    .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-26 {
-      order: 2; } }
-  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-66 a::before {
-    content: '';
-    background-image: url("https://shop.toepferhaus.ch/wp-content/uploads/2021/03/TH-Frischprodukte.svg");
-    width: 50px;
-    height: 50px;
-    margin: auto;
-    margin-bottom: 1.2rem;
-    display: block;
-    background-repeat: no-repeat; }
-  @media only screen and (max-width: 768px) {
-    .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-66 {
-      order: 6; } }
-  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-33 a::before {
-    content: '';
-    background-image: url("https://shop.toepferhaus.ch/wp-content/uploads/2021/04/TH-Goldstück.svg");
-    width: 50px;
-    height: 50px;
-    margin: auto;
-    margin-bottom: 1rem;
-    display: block;
-    background-repeat: no-repeat; }
-  @media only screen and (max-width: 768px) {
-    .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-33 {
-      order: 3; } }
-  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-46 a::before {
-    content: '';
-    background-image: url("https://shop.toepferhaus.ch/wp-content/uploads/2021/03/TH-Karte.svg");
-    width: 45px;
-    height: 45px;
-    margin: auto;
-    margin-bottom: 1.4rem;
-    display: block;
-    background-repeat: no-repeat; }
-  @media only screen and (max-width: 768px) {
-    .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-46 {
-      order: 4; } }
-  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-20 a::before {
-    content: '';
-    background-image: url("https://shop.toepferhaus.ch/wp-content/uploads/2021/03/TH-Pasta.svg");
-    width: 48px;
-    height: 48px;
-    margin: auto;
-    margin-bottom: 1rem;
-    display: block;
-    background-repeat: no-repeat; }
-  @media only screen and (max-width: 768px) {
-    .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-20 {
-      order: 5; } }
-  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-261 a::before {
-    content: '';
-    background-image: url("https://shop.toepferhaus.ch/wp-content/uploads/2021/04/TH_pataBee.svg");
-    width: 50px;
-    height: 50px;
-    margin: auto;
-    margin-bottom: 1rem;
-    display: block;
-    background-repeat: no-repeat; }
-  @media only screen and (max-width: 768px) {
-    .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-261 {
-      order: 7; } }
-  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-15, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-104, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-277, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-264 {
+  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-56 {
+    order: 2; }
+    .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-56 a::before {
+      content: '';
+      background-image: url("https://shop.toepferhaus.ch/wp-content/uploads/2021/03/TH-Bachfisch.svg");
+      width: 50px;
+      height: 50px;
+      margin: auto;
+      margin-bottom: 1rem;
+      display: block;
+      background-repeat: no-repeat; }
+  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-26 {
+    order: 1; }
+    .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-26 a::before {
+      content: '';
+      background-image: url("https://shop.toepferhaus.ch/wp-content/uploads/2021/03/TH-Backwaren.svg");
+      width: 50px;
+      height: 50px;
+      margin: auto;
+      margin-bottom: 1rem;
+      display: block;
+      background-repeat: no-repeat; }
+  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-66 {
+    order: 5; }
+    .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-66 a::before {
+      content: '';
+      background-image: url("https://shop.toepferhaus.ch/wp-content/uploads/2021/03/TH-Frischprodukte.svg");
+      width: 50px;
+      height: 50px;
+      margin: auto;
+      margin-bottom: 1.2rem;
+      display: block;
+      background-repeat: no-repeat; }
+  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-33 {
+    order: 3; }
+    .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-33 a::before {
+      content: '';
+      background-image: url("https://shop.toepferhaus.ch/wp-content/uploads/2021/04/TH-Goldstück.svg");
+      width: 50px;
+      height: 50px;
+      margin: auto;
+      margin-bottom: 1rem;
+      display: block;
+      background-repeat: no-repeat; }
+  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-46 {
+    order: 8; }
+    .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-46 a::before {
+      content: '';
+      background-image: url("https://shop.toepferhaus.ch/wp-content/uploads/2021/03/TH-Karte.svg");
+      width: 45px;
+      height: 45px;
+      margin: auto;
+      margin-bottom: 1rem;
+      display: block;
+      background-repeat: no-repeat; }
+  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-20 {
+    order: 6; }
+    .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-20 a::before {
+      content: '';
+      background-image: url("https://shop.toepferhaus.ch/wp-content/uploads/2021/03/TH-Pasta.svg");
+      width: 48px;
+      height: 48px;
+      margin: auto;
+      margin-bottom: 1rem;
+      display: block;
+      background-repeat: no-repeat; }
+  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-102 {
+    order: 7; }
+    .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-102 a::before {
+      content: '';
+      background-image: url("https://shop.toepferhaus.ch/wp-content/uploads/2021/06/noun_Gift_4024728.svg");
+      width: 48px;
+      height: 48px;
+      margin: auto;
+      margin-bottom: 1rem;
+      display: block;
+      background-repeat: no-repeat; }
+  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-261 {
+    order: 9; }
+    .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-261 a::before {
+      content: '';
+      background-image: url("https://shop.toepferhaus.ch/wp-content/uploads/2021/04/TH_pataBee.svg");
+      width: 50px;
+      height: 50px;
+      margin: auto;
+      margin-bottom: 1rem;
+      display: block;
+      background-repeat: no-repeat; }
+  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-15, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-104, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-277, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-264, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-56, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-33 {
     display: none !important; }
   @media only screen and (min-width: 769px) {
     .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item:not(:last-child) {

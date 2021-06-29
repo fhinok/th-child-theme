@@ -23,9 +23,10 @@
 
         @media only screen and (min-width: 769px) {
             display: flex;
-            flex-flow: row wrap;
-            justify-content: space-around;
+            flex-flow: row;
+            justify-content: center;
             padding: 0;
+            align-items: baseline;
         }
 
         li.cat-item {
@@ -68,10 +69,8 @@
                     display: block; 
                     background-repeat: no-repeat;
                 }
-
-                @media only screen and (max-width: 768px) {
-                    order: 1;
-                }
+                
+                order: 2;
             }
 
             &-26 {
@@ -86,9 +85,7 @@
                     background-repeat: no-repeat;
                 }
                 
-                @media only screen and (max-width: 768px) {
-                    order: 2;
-                }
+                order: 1;
             }
 
             &-66 {
@@ -102,10 +99,8 @@
                     display: block; 
                     background-repeat: no-repeat;
                 }
-
-                @media only screen and (max-width: 768px) {
-                    order: 6;
-                }
+                
+                order: 5;
             }
 
             &-33 {
@@ -119,10 +114,8 @@
                     display: block; 
                     background-repeat: no-repeat;
                 }
-
-                @media only screen and (max-width: 768px) {
-                    order: 3;
-                }
+                
+                order: 3;
             }
 
             &-46 {
@@ -132,14 +125,12 @@
                     width: 45px; 
                     height: 45px; 
                     margin: auto; 
-                    margin-bottom: 1.4rem; 
+                    margin-bottom: 1rem; 
                     display: block; 
                     background-repeat: no-repeat;
                 }
-
-                @media only screen and (max-width: 768px) {
-                    order: 4;
-                }
+                
+                order: 8;
             }
 
             &-20 {
@@ -154,9 +145,22 @@
                     background-repeat: no-repeat;
                 }
                 
-                @media only screen and (max-width: 768px) {
-                    order: 5;
+                order: 6;
+            }
+
+            &-102 {
+                a::before {
+                    content:'';
+                    background-image:url("https://shop.toepferhaus.ch/wp-content/uploads/2021/06/noun_Gift_4024728.svg"); 
+                    width: 48px; 
+                    height: 48px; 
+                    margin: auto; 
+                    margin-bottom: 1rem; 
+                    display: block; 
+                    background-repeat: no-repeat;
                 }
+                
+                order: 7;  
             }
 
             &-261 {
@@ -168,15 +172,13 @@
                     margin: auto; 
                     margin-bottom: 1rem; 
                     display: block; 
-                    background-repeat: no-repeat;    
+                    background-repeat: no-repeat;
                 }
-
-                @media only screen and (max-width: 768px) {
-                    order: 7;
-                }
+                
+                order: 9;  
             }
 
-            &-15, &-104, &-277, &-264 {
+            &-15, &-104, &-277, &-264, &-56, &-33 {
                 display: none!important;
             }
 
