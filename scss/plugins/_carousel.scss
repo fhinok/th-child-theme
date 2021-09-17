@@ -1,12 +1,29 @@
 .carousel-slider {
     &__item {
         width: 450px;
+
+        @media only screen and (max-width: 768px) {
+            width: 120px;
+        }
     }
 
     .carousel-slider__caption {
         p.caption {
-            // font-weight: bold;
+            font-weight: bold;
             font-size: 22px;
+            text-align: right;
+
+            @media only screen and (max-width: 768px) {
+                text-align: center;
+            }
+        }
+    }
+
+    .owl-stage-outer {
+        padding-left: 20%;
+        
+        @media only screen and (max-width: 768px) {
+            margin-top: 40px;
         }
     }
 }
