@@ -216,7 +216,7 @@ if( isb2b() ) {
 		if( $crm_contact ) {
 			echo "<address style='white-space: pre-line;'>". $crm_contact ."</address>";
 		} else {
-			echo "<a href='mailto:bestellung@toepferhaus.ch'>bestellung@toepferhaus.ch</a><p>062 837 60 24</p>";
+			echo "<a href='mailto:bestellung@toepferhaus.ch'>bestellung@toepferhaus.ch</a><p>062 837 61 84</p>";
 
 		}
 	}
