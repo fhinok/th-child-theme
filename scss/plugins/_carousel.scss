@@ -1,0 +1,12 @@
+.carousel-slider {
+    &__item {
+        width: 450px;
+    }
+
+    .carousel-slider__caption {
+        p.caption {
+            // font-weight: bold;
+            font-size: 22px;
+        }
+    }
+}

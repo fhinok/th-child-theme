@@ -295,6 +295,12 @@ div.wpt_product_table_wrapper table.wpt_product_table tbody tr.wpt_row > td, .cu
   color: red;
   margin-top: .2rem; }
 
+.carousel-slider__item {
+  width: 450px; }
+
+.carousel-slider .carousel-slider__caption p.caption {
+  font-size: 22px; }
+
 input[type="search"].aws-search-field {
   background-color: #1babe5 !important;
   border: none;
