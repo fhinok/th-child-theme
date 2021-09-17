@@ -72,6 +72,10 @@ jQuery(function ($) {
         // check if next days are on weekend and set to monday
         var tomorrow = new Date();
         var tomorrow_allowed = () => {
+            if (tomorrow.getHours >= 16 ) {
+                tomorrow.setDate(tomorrow.getDate() + 2)
+                return tomorrow;
+            }
             tomorrow.setDate(tomorrow.getDate() + 1);
             if (tomorrow.getDay() === 6) {
                 tomorrow.setDate(tomorrow.getDate() + 2);
@@ -109,6 +113,6 @@ jQuery(function ($) {
             } else {
                 $('.sameday').remove();
             }
-          });
+        });
     });
 });
