@@ -133,6 +133,21 @@
                 order: 8;
             }
 
+            &-292 {
+                a::before {
+                    content:'';
+                    background-image:url("https://shop.toepferhaus.ch/wp-content/uploads/2021/10/TH-PastaBox-2.svg"); 
+                    width: 45px; 
+                    height: 45px; 
+                    margin: auto; 
+                    margin-bottom: .8rem; 
+                    display: block; 
+                    background-repeat: no-repeat;
+                }
+                
+                order: 9;
+            }
+
             &-20 {
                 a::before {
                     content:'';

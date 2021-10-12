@@ -447,6 +447,17 @@ input[type="search"].aws-search-field {
       margin-bottom: 1rem;
       display: block;
       background-repeat: no-repeat; }
+  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-292 {
+    order: 9; }
+    .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-292 a::before {
+      content: '';
+      background-image: url("https://shop.toepferhaus.ch/wp-content/uploads/2021/10/TH-PastaBox-2.svg");
+      width: 45px;
+      height: 45px;
+      margin: auto;
+      margin-bottom: .8rem;
+      display: block;
+      background-repeat: no-repeat; }
   .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-20 {
     order: 6; }
     .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-20 a::before {
