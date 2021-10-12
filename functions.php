@@ -397,6 +397,20 @@ function th_change_payment( $allowed_gateways ) {
 	return $allowed_gateways;
 }
 
+/**
+ * filter <br> tag in product page
+ */
+
+ add_filter( 'the_title', 'filter_br_tag', 10, 2 );
+ function filter_br_tag( $title, $post_id ) {
+	 $post_type = get_post_field( 'post_type', $post_id, true );
+
+	 if( is_product() && in_array( $post_type, array( 'product', 'product_variation' ) ) ) {
+		 $title = str_replace( '<br>', ' ', $title );
+	 }
+	 return $title;
+ }
+
 	
 /**
  * remove sorting (gets added in sidebar again)
