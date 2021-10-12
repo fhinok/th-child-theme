@@ -28,8 +28,6 @@
     }
 }
 
-.dd-select {
-    img.scale-with-grid, #Content img {
-        height: 50px;
+.dd-selected-image, .dd-option-image {
+        height: 50px !important;
     }
-}

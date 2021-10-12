@@ -291,8 +291,8 @@ div.wpt_product_table_wrapper table.wpt_product_table tbody tr.wpt_row > td, .cu
   .select2-container, body .ui-widget.ui-datepicker {
     z-index: -1 !important; } }
 
-.dd-select img.scale-with-grid, .dd-select #Content img {
-  height: 50px; }
+.dd-selected-image, .dd-option-image {
+  height: 50px !important; }
 
 .sameday {
   color: red;
