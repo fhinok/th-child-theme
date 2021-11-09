@@ -494,7 +494,7 @@ input[type="search"].aws-search-field {
       margin-bottom: 1rem;
       display: block;
       background-repeat: no-repeat; }
-  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-15, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-104, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-277, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-264, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-56, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-33 {
+  .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-15, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-104, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-277, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-264, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-56, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-33, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-302, .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item-292 {
     display: none !important; }
   @media only screen and (min-width: 769px) {
     .column_sidebar_widget .widget_product_categories ul.product-categories li.cat-item:not(:last-child) {
