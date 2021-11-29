@@ -107,8 +107,8 @@ jQuery(function ($) {
         // if customer picks today, show message
         $('#shipping_date').on('pick.datepicker', function (e) {
             var today = new Date();
-            
-            if(today.getHours() >= 14 && e.date.getDay() === today.getDay() + 1 ) {
+
+            if(today.getHours() >= 15 && e.date.getDay() === today.getDay() + 1 ) {
                 $('#shipping_date').closest('.form-row').append("<p class='sameday'>Eine Lieferung für Morgen kann leider nur bis 15 Uhr bestellt werden.");
                 $('#place_order').prop("disabled",true);
                 return
