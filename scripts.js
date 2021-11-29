@@ -72,7 +72,7 @@ jQuery(function ($) {
         // check if next days are on weekend and set to monday
         var tomorrow = new Date();
         var tomorrow_allowed = () => {
-            if (tomorrow.getHours >= 16 ) {
+            if (tomorrow.getHours() >= 15 ) {
                 tomorrow.setDate(tomorrow.getDate() + 2)
                 return tomorrow;
             }
@@ -107,6 +107,13 @@ jQuery(function ($) {
         // if customer picks today, show message
         $('#shipping_date').on('pick.datepicker', function (e) {
             var today = new Date();
+            
+            if(today.getHours() >= 14 && e.date.getDay() === today.getDay() + 1 ) {
+                $('#shipping_date').closest('.form-row').append("<p class='sameday'>Eine Lieferung für Morgen kann leider nur bis 15 Uhr bestellt werden.");
+                $('#place_order').prop("disabled",true);
+                return
+            }
+
             today.setHours(0,0,0,0);
             if (e.date.valueOf() === today.valueOf()) {
                 $('#shipping_date').closest('.form-row').append("<p class='sameday'>Für eine Lieferung heute kontaktieren Sie bitte das Töpferhaus!</p>");
