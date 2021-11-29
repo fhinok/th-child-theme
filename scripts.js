@@ -90,7 +90,7 @@ jQuery(function ($) {
 
         // init datepicker
         $('#shipping_date').datepicker({
-            offset: -22,
+            offset: 6,
             language: 'de-DE',
             format: 'dd.mm.YYYY',
             date: tomorrow_allowed(tomorrow),
@@ -110,8 +110,10 @@ jQuery(function ($) {
             today.setHours(0,0,0,0);
             if (e.date.valueOf() === today.valueOf()) {
                 $('#shipping_date').closest('.form-row').append("<p class='sameday'>Für eine Lieferung heute kontaktieren Sie bitte das Töpferhaus!</p>");
+                $('#place_order').prop("disabled",true);
             } else {
                 $('.sameday').remove();
+                $('#place_order').prop("disabled",false);
             }
         });
     });
