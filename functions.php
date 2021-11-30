@@ -103,7 +103,7 @@ function th_rename_default_sorting_options( $options ){
 		'popularity' => 'Beliebteste',
 		'title' => 'A - Z',
 		'title-desc' => 'Z - A',
-		'in-stock' => 'Verfügbarkeit',
+		// 'in-stock' => 'Verfügbarkeit',
 		'price' => 'Günstigste',
 		'price-desc' => 'Teuerste'
 	);
