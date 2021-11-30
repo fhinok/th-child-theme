@@ -142,8 +142,10 @@ table th, table td {
 @media only screen and (min-width: 1244px) {
   .woocommerce .products_wrapper ul.products li.product, .woocommerce-page .products_wrapper ul.products li.product {
     width: 23%; }
-    .woocommerce .products_wrapper ul.products li.product:nth-child(3n+1), .woocommerce-page .products_wrapper ul.products li.product:nth-child(3n+1) {
-      clear: none; } }
+    .woocommerce .products_wrapper ul.products li.product.first, .woocommerce-page .products_wrapper ul.products li.product.first {
+      clear: none !important; }
+    .woocommerce .products_wrapper ul.products li.product:nth-child(4n+1), .woocommerce-page .products_wrapper ul.products li.product:nth-child(4n+1) {
+      clear: both; } }
 
 .woocommerce ul.products li.product .desc, .woocommerce-page ul.products li.product .desc {
   padding: 0;
