@@ -665,6 +665,8 @@ select.orderby {
       grid-template-rows: 50px 50px 50px 50px 200px 50px; } }
   #contact .wpcf7-form-control-wrap {
     margin-bottom: 10px; }
+  #contact .wpcf7-spinner {
+    background-color: #555555; }
   #contact .your-message {
     grid-column-start: 1;
     grid-row-start: 1;
