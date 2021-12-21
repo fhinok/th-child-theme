@@ -88,6 +88,7 @@
     float: none;
 }
 
+
 select.orderby {
     border-width: 2px;
     border-color: $color_secondary_gray;
@@ -165,4 +166,13 @@ select.orderby {
     .vc_row.wpb_row.vc_inner.vc_row-fluid {
         margin: 0;
     }
+}
+
+// 21.12.2021 -> disable dropdown
+.woocommerce-ordering {
+    display: none;
+}
+
+#th_filters {
+    top: -34px;
 }
