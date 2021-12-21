@@ -167,6 +167,16 @@
         }
     }
 
+    /*
+    21.12.2021 - remove related products
+    */
+    .related.products {
+        display: none;
+    }
+    .product_wrapper {
+        margin-bottom: 126px;
+    }
+
 }
 
 /* WooCO Totalpreis ausblenden */
