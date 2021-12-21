@@ -47,7 +47,7 @@ $col    = 1;
 	<?php 
 	// Show message to b2b customers
 	if( isb2b() ) {
-		echo '<p>Für eine Änderung der Adresse nehmen Sie bitte mit dem Töpferhaus Kontakt auf.</p>'; 
+		echo '<p>Für eine Änderung der Adresse nehmen Sie bitte mit dem Töpferhaus Kontakt auf: <a href="mailto:bestellung@toepferhaus.ch">bestellung@toepferhaus.ch</a></p>'; 
 	}
 	?>
 </p>
