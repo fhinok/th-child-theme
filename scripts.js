@@ -67,61 +67,61 @@ jQuery(function ($) {
 	});
 
     // Datepicker on checkout settings
-    $(document).ready( function() {
+    // $(document).ready( function() {
 
-        // check if next days are on weekend and set to monday
-        var tomorrow = new Date();
-        var tomorrow_allowed = () => {
-            if (tomorrow.getHours() >= 15 ) {
-                tomorrow.setDate(tomorrow.getDate() + 2)
-                return tomorrow;
-            }
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            if (tomorrow.getDay() === 6) {
-                tomorrow.setDate(tomorrow.getDate() + 2);
-            }
+    //     // check if next days are on weekend and set to monday
+    //     var tomorrow = new Date();
+    //     var tomorrow_allowed = () => {
+    //         if (tomorrow.getHours() >= 15 ) {
+    //             tomorrow.setDate(tomorrow.getDate() + 2)
+    //             return tomorrow;
+    //         }
+    //         tomorrow.setDate(tomorrow.getDate() + 1);
+    //         if (tomorrow.getDay() === 6) {
+    //             tomorrow.setDate(tomorrow.getDate() + 2);
+    //         }
 
-            if (tomorrow.getDay() === 0) {
-                tomorrow.setDate(tomorrow.getDate() + 1);
-            }
+    //         if (tomorrow.getDay() === 0) {
+    //             tomorrow.setDate(tomorrow.getDate() + 1);
+    //         }
 
-            return tomorrow;
-        }
+    //         return tomorrow;
+    //     }
 
-        // init datepicker
-        $('#shipping_date').datepicker({
-            offset: 6,
-            language: 'de-DE',
-            format: 'dd.mm.YYYY',
-            date: tomorrow_allowed(tomorrow),
-            startDate: new Date(),
-            weekStart: 1,
-            autoPick: true,
-            filter: (date, view) => {
-                if(date.getDay() === 0 && view === 'day' || date.getDay() === 6 && view === 'day') {
-                    return false;
-                }
-            }
-        });
+    //     // init datepicker
+    //     $('#shipping_date').datepicker({
+    //         offset: 6,
+    //         language: 'de-DE',
+    //         format: 'dd.mm.YYYY',
+    //         date: tomorrow_allowed(tomorrow),
+    //         startDate: new Date(),
+    //         weekStart: 1,
+    //         autoPick: true,
+    //         filter: (date, view) => {
+    //             if(date.getDay() === 0 && view === 'day' || date.getDay() === 6 && view === 'day') {
+    //                 return false;
+    //             }
+    //         }
+    //     });
 
-        // if customer picks today, show message
-        $('#shipping_date').on('pick.datepicker', function (e) {
-            var today = new Date();
+    //     // if customer picks today, show message
+    //     $('#shipping_date').on('pick.datepicker', function (e) {
+    //         var today = new Date();
 
-            if(today.getHours() >= 15 && e.date.getDay() === today.getDay() + 1 ) {
-                $('#shipping_date').closest('.form-row').append("<p class='sameday'>Eine Lieferung für Morgen kann leider nur bis 15 Uhr bestellt werden.");
-                $('#place_order').prop("disabled",true);
-                return
-            }
+    //         if(today.getHours() >= 15 && e.date.getDay() === today.getDay() + 1 ) {
+    //             $('#shipping_date').closest('.form-row').append("<p class='sameday'>Eine Lieferung für Morgen kann leider nur bis 15 Uhr bestellt werden.");
+    //             $('#place_order').prop("disabled",true);
+    //             return
+    //         }
 
-            today.setHours(0,0,0,0);
-            if (e.date.valueOf() === today.valueOf()) {
-                $('#shipping_date').closest('.form-row').append("<p class='sameday'>Für eine Lieferung heute kontaktieren Sie bitte das Töpferhaus!</p>");
-                $('#place_order').prop("disabled",true);
-            } else {
-                $('.sameday').remove();
-                $('#place_order').prop("disabled",false);
-            }
-        });
-    });
+    //         today.setHours(0,0,0,0);
+    //         if (e.date.valueOf() === today.valueOf()) {
+    //             $('#shipping_date').closest('.form-row').append("<p class='sameday'>Für eine Lieferung heute kontaktieren Sie bitte das Töpferhaus!</p>");
+    //             $('#place_order').prop("disabled",true);
+    //         } else {
+    //             $('.sameday').remove();
+    //             $('#place_order').prop("disabled",false);
+    //         }
+    //     });
+    // });
 });
