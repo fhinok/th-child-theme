@@ -199,6 +199,15 @@ if( isb2b() ){
 		$fields['order']['order_comments']['placeholder'] = "Anmerkungen zu Ihrer Bestellung.";
 		return $fields;
 	}
+
+	add_filter('woocommerce_save_account_details_required_fields', 'th_save_account_details_required_fields' );
+	function th_save_account_details_required_fields( $required_fields ){
+    	unset( $required_fields );
+    	// unset( $required_fields['account_last_name'] );
+    	// unset( $required_fields['account_display_name'] );
+    	// unset( $required_fields['account_email'] );
+    return $required_fields;
+	}
 }
 
 /**
