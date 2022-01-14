@@ -171,7 +171,7 @@ if( isb2b() ){
 		woocommerce_form_field( 'shipping_date', array(
 			'type'	=> 'text',
 			'class'	=> array('form-row-wide'),
-			'label'	=> 'Gewünschtes Lieferdatum',
+			'label'	=> 'Gewünschtes Lieferdatum (Bestellungen nach 15:00 Uhr können nicht für den Folgetag getätigt werden.)',
 			'custom_attributes' => array(  'readonly' => 'readonly' ),
 			'required' => true,
 		), $fields->get_value( 'shipping_date' ) );
