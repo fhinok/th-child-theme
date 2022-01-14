@@ -184,12 +184,13 @@ if ($back_to_top_class == 'hide') {
 		const bachstrasse_location = { lat: 47.38636673097061, lng: 8.057152546717441 };
 		const suhr_location = { lat: 47.3671549277468, lng: 8.08368075893751 };
 
-		let info = (titel, angebot) => {
+		let info = (titel, angebot, tel) => {
 			var text = `
 			<div id="content">
 				<h1 id="firstHeading" class="firstHeading">${ titel }</h1>
 				<div id="bodyContent">
 					<p>Hier können Sie ${ angebot } abholen</p>
+					<p>Bei Fragen erreichen Sie uns unter der Telefonnummer ${ tel }.</p>
 				</div>
 			</div>`
 			return text;
@@ -229,15 +230,15 @@ if ($back_to_top_class == 'hide') {
 		});
 
 		const info_atelier = new google.maps.InfoWindow({
-			content: info('Tagesstätte', 'Karten und pataBee'),
+			content: info('Tagesstätte', 'Karten und pataBee', '062 837 60 19'),
 		});
 
 		const info_bachstrasse = new google.maps.InfoWindow({
-			content: info('Bachstrasse', 'Frischprodukte'),
+			content: info('Bachstrasse', 'Frischprodukte', '062 837 60 60'),
 		});
 
 		const info_suhr = new google.maps.InfoWindow({
-			content: info('Suhr (ab Sommer 2021)', 'Teigwaren und Backwaren'),
+			content: info('Suhr', 'Teigwaren und Backwaren', '062 837 61 84',
 		});
 
 		marker_atelier.addListener('click', () => {
