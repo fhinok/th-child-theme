@@ -238,7 +238,7 @@ if ($back_to_top_class == 'hide') {
 		});
 
 		const info_suhr = new google.maps.InfoWindow({
-			content: info('Suhr', 'Teigwaren und Backwaren', '062 837 61 84',
+			content: info('Suhr', 'Teigwaren und Backwaren', '062 837 61 84'),
 		});
 
 		marker_atelier.addListener('click', () => {
