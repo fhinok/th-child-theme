@@ -37,8 +37,9 @@ defined( 'ABSPATH' ) || exit;
 			<?php do_action( 'woocommerce_before_checkout_shipping_form', $checkout ); ?>
 
 			<div class="woocommerce-shipping-fields__field-wrapper">
-			<?php
+				<?php
 			$fields = $checkout->get_checkout_fields( 'shipping' );
+			unset($fields['shipping_state']);
 			/**
 			 * Prevent b2b users from changing address
 			 */
@@ -51,7 +52,6 @@ defined( 'ABSPATH' ) || exit;
 				if( isb2b() ){
 					$field['custom_attributes'] = array( 'readonly' => true );
 				}
-				unset($fields['shipping']['shipping_state']);
 				woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
 			}
 			?>
