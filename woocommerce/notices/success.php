@@ -30,7 +30,7 @@ if ( ! $notices ) {
 	<div class="woocommerce-message"<?php echo wc_get_notice_data_attr( $notice ); ?> role="alert">
 		<?php echo wc_kses_notice( $notice['notice'] ); ?>
 		<?php if( is_product() && has_term( 'karten', 'product_cat' ) ) : ?>
-			<a href="" tabindex="1" onclick="window.history.go(-2)" class="button th-back">Zurück zur Übersicht</a>
+			<a href="/karten" class="button th-back">Zurück zur Übersicht</a>
 		<?php endif; ?>
 	</div>
 <?php endforeach; ?>

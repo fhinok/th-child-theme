@@ -76,4 +76,10 @@ jQuery(function ($) {
         })
     })
 
+    $(document).on("click", '.th-back', function(){
+        // todo regex in history for filtered view, else load /karten
+        window.history.go(-2)
+        return false;
+    });
+
 });
