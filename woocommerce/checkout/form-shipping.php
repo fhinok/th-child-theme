@@ -51,6 +51,7 @@ defined( 'ABSPATH' ) || exit;
 				if( isb2b() ){
 					$field['custom_attributes'] = array( 'readonly' => true );
 				}
+				unset($fields['shipping']['shipping_state']);
 				woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
 			}
 			?>
