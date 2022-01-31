@@ -54,14 +54,14 @@ jQuery(function ($) {
             $('.sameday').remove();
             $('#place_order').prop("disabled",false);
 
-            if(picked_date.getDate() === now.getDate()) {
+            if(picked_date.getDate() === now.getDate() && picked_date.getMonth() === now.getMonth()) {
                 text = "Für heute kann keine Lieferung mehr über den Shop bestellt werden."
                 $('#shipping_date').closest('.form-row').append("<p class='sameday'>" + text + "</p>");
                 $('#place_order').prop("disabled",true);
                 return
             }
 
-            if(picked_date.valueOf() < nextAllowed(now).valueOf() && picked_date.getDay() != 1){
+            if(picked_date.valueOf() < nextAllowed(tomorrow).valueOf() && picked_date.getDay() != nextAllowed(tomorrow).getDay()){
                 text = "Achtung: Bestellungen nach 15:00 Uhr können nicht für den Folgetag gewährleistet werden."
                 $('#shipping_date').closest('.form-row').append("<p class='sameday'>" + text + "</p>");
                 // $('#place_order').prop("disabled",true);
