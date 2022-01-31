@@ -243,3 +243,7 @@ div.vc_column-inner.vc_custom_1614696527171 {
         padding-right: 5px;
     }
 }
+
+ul#shipping_method ~ p.woocommerce-shipping-destination {
+    display: none!important;
+}
