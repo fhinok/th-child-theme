@@ -62,9 +62,9 @@ jQuery(function ($) {
             }
 
             if(picked_date.valueOf() < nextAllowed(now).valueOf() && picked_date.getDay() != 1){
-                text = "Eine Lieferung für den Folgetag kann nur bis 15.00 Uhr aufgegeben werden"
+                text = "Achtung: Bestellungen nach 15:00 Uhr können nicht für den Folgetag gewährleistet werden."
                 $('#shipping_date').closest('.form-row').append("<p class='sameday'>" + text + "</p>");
-                $('#place_order').prop("disabled",true);
+                // $('#place_order').prop("disabled",true);
             }
         });
 
