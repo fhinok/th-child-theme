@@ -67,7 +67,7 @@ add_filter('body_class', function($classes) {
 function th_theme_enqueue () {
 	wp_enqueue_script( 'allergene', get_stylesheet_directory_uri() . '/allergene.js', array( 'jquery', 'jquery-ui-core', 'jquery-effects-slide' ),'',true );
 	wp_enqueue_script( 'theme-js', get_stylesheet_directory_uri() . '/scripts.js', array( 'jquery', 'jquery-ui-core', 'jquery-effects-slide', 'allergene' ),'',true );
-	wp_enqueue_script( 'deliverydate', get_stylesheet_directory_uri() . '/deliverydate.js', array( 'jquery', 'jquery-ui-core', 'jquery-effects-slide', 'allergene' ),'',true );
+	wp_enqueue_script( 'deliverydate', get_stylesheet_directory_uri() . '/deliverydate.js?1200', array( 'jquery', 'jquery-ui-core', 'jquery-effects-slide', 'allergene' ),'',true );
 	wp_enqueue_script( 'datepicker-js', get_stylesheet_directory_uri() . '/plugins/datepicker.min.js', array( 'jquery' ),'',true );
 	wp_enqueue_script( 'datepicker-de', get_stylesheet_directory_uri() . '/plugins/datepicker.de-DE.js', array( 'jquery', 'datepicker-js' ),'',true );
 	wp_enqueue_style( 'datepicker-css', get_stylesheet_directory_uri() . '/plugins/datepicker.min.css');
