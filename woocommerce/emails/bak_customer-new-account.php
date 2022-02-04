@@ -12,7 +12,7 @@
  *
  * @see https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates\Emails
- * @version 6.0.0
+ * @version 3.7.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -26,9 +26,9 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 <?php if( isb2b() ) {
 		echo '<p>Das Passwort wird Ihnen mit einer separaten E-Mail zugesendet.</p>'; 
 } ?>
-<?php if ( 'yes' === get_option( 'woocommerce_registration_generate_password' ) && $password_generated && $set_password_url ) : ?>
-	<?php // If the password has not been set by the user during the sign up process, send them a link to set a new password ?>
-	<p><a href="<?php echo esc_attr( $set_password_url ); ?>"><?php printf( esc_html__( 'Click here to set your new password.', 'woocommerce' ) ); ?></a></p>
+<?php if ( 'yes' === get_option( 'woocommerce_registration_generate_password' ) && $password_generated ) : ?>
+	<?php /* translators: %s: Auto generated password */ ?>
+	<p><?php printf( esc_html__( 'Your password has been automatically generated: %s', 'woocommerce' ), '<strong>' . esc_html( $user_pass ) . '</strong>' ); ?></p>
 <?php endif; ?>
 
 <?php
