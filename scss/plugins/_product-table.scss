@@ -61,6 +61,10 @@ div.wpt_product_table_wrapper table.wpt_product_table tbody tr.wpt_row>td, .cust
     display: none;
 }
 
+.qib-container .quantity input.qty:not(#qib_id):not(#qib_id) {
+    width: 70px!important;
+}
+
 .stock_status_outofstock {
     background-color: rgba($color_light_gray, .6);
     color: rgba($color_light_gray, 1)!important;
