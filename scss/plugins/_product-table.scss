@@ -85,3 +85,11 @@ div.wpt_product_table_wrapper table.wpt_product_table tbody tr.wpt_row>td, .cust
         height: 30px;
     }
 }
+
+#wpt_table {
+    .wpt_row {
+        .qty {
+            padding: 0px!important;
+        }
+    }
+}

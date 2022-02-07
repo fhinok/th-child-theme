@@ -284,6 +284,9 @@ div.wpt_product_table_wrapper table.wpt_product_table tbody tr.wpt_row > td, .cu
     width: 100%;
     height: 30px; }
 
+#wpt_table .wpt_row .qty {
+  padding: 0px !important; }
+
 .select2-container--default .select2-selection--single:not(:nth-child(2)), .select2-container--focus:not(:nth-child(2)), .select2-selection--multiple:not(:nth-child(2)) {
   border-radius: 0 !important;
   height: 32px;
