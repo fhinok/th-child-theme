@@ -32,7 +32,8 @@ jQuery(function ($) {
             return
         }
         
-        cats = ['frischprodukte', 'backwaren', 'teigwaren'];
+        // cats = ['frischprodukte', 'backwaren', 'teigwaren', 'tk-produkte', '2fuer1', 'geschenk', 'unverpackt'];
+        cats = ['frischprodukte', 'backwaren', 'teigwaren', 'tk-produkte'];
         remove_cat_from_filter(cats);
         
         $(document).on('berocket_ajax_products_loaded', function() {
