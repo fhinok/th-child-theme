@@ -247,3 +247,15 @@ div.vc_column-inner.vc_custom_1614696527171 {
 ul#shipping_method ~ p.woocommerce-shipping-destination {
     display: none!important;
 }
+
+// .checkout.woocommerce-checkout {
+//     .cart_item > .product-name {
+//         br {
+//             display: none;
+//         }
+//     }
+// }
+
+.woocommerce table.shop_table tr.order-total .woocommerce-Price-amount, .woocommerce table.woocommerce-table--order-details tfoot tr:last-child .woocommerce-Price-amount {
+    font-size: 20px;
+}

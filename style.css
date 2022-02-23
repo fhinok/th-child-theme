@@ -223,6 +223,9 @@ div.vc_column-inner.vc_custom_1614696527171 {
 ul#shipping_method ~ p.woocommerce-shipping-destination {
   display: none !important; }
 
+.woocommerce table.shop_table tr.order-total .woocommerce-Price-amount, .woocommerce table.woocommerce-table--order-details tfoot tr:last-child .woocommerce-Price-amount {
+  font-size: 20px; }
+
 .search_single .query_box_direct_value, .instance_search_input {
   padding: 6px 10px 6px 10px;
   width: 50%;
@@ -270,7 +273,8 @@ div.wpt_product_table_wrapper table.wpt_product_table tbody tr.wpt_row > td, .cu
   display: none; }
 
 .qib-container .quantity input.qty:not(#qib_id):not(#qib_id) {
-  width: 70px !important; }
+  width: 70px !important;
+  padding: 15px 5px !important; }
 
 .stock_status_outofstock {
   background-color: rgba(158, 158, 158, 0.6);
