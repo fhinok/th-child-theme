@@ -264,7 +264,7 @@ function th_get_subcategory_terms( $terms, $taxonomies, $args ) {
 
 	if ( in_array( 'product_cat', $taxonomies ) && ! is_admin() &&is_shop() ) {
 		foreach( $terms as $key => $term ) {
-			if ( !in_array( $term->slug, array( 'unkategorisiert', 'box_saucen', 'box_pasta', 'box_pasta-gross', 'box_verpackungen', 'box_products' ) ) ) { 
+			if ( !in_array( $term->slug, array( 'unkategorisiert', 'box_saucen', 'box_pasta', 'box_pasta-gross', 'box_verpackungen', 'box_products', 'tk-en-gros' ) ) ) { 
 				$new_terms[] = $term;
 			}
 		}
